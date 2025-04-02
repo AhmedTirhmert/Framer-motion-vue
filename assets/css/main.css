@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-primary-800 dark:text-primary-100;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(0.5rem);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: theme('colors.primary.900');
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.primary.100');
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.primary.50');
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background-color: theme('colors.primary.800/50');
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: theme('colors.primary.900');
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.primary.900');
+}
+/* Hide the scrollbar initially */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+}
+
+/* Show the scrollbar when the page is loaded */
+body:not(.loading) ::-webkit-scrollbar {
+  opacity: 1;
+}
