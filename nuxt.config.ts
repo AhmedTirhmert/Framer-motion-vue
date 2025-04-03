@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'motion-v/nuxt',
     '@nuxt/image',
+    '@vueuse/motion/nuxt',
   ],
   colorMode: {
     classSuffix: '',
@@ -34,9 +35,6 @@ export default defineNuxtConfig({
       'Montserrat': [300, 400, 500, 600],
     },
     display: 'swap',
-  },
-  alias: {
-    '@images': '/assets/images',
   },
   css: ['@/assets/css/main.css'],
   app: {

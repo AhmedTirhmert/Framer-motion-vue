@@ -22,15 +22,15 @@
           }"
           while-in-view="visible"
           initial="hidden"
-          :while-in-view-options="{ once: true }"
-          class="font-display text-4xl mb-8"
+          :in-view-options="{ once: true }"
+          class="font-display text-3xl lg:text-4xl mb-8"
         >
           L'excellence au service de vos intérieurs
         </motion.h2>
         <div class="">
           <p
             ref="paragraphRef"
-            class="text-lg relative text-primary-600 dark:text-primary-100 text-center mb-6 leading-relaxed"
+            class="text-base lg:text-lg relative text-primary-600 dark:text-primary-100 mb-6 leading-tight text-balance"
           >
             <span
               v-for="(word, index) in words"
@@ -38,10 +38,9 @@
               class="inline-block relative overflow-hidden"
               style="margin-right: 5px"
             >
-              <motion.span class="inline-block relative">
+              <motion.span class="inline-block relative" v-if="isInView">
                 {{ word }}
                 <motion.div
-                  v-if="isInView"
                   :variants="wordVariants"
                   :transition="{
                     duration: 0.8,
@@ -50,7 +49,7 @@
                   }"
                   while-in-view="visible"
                   initial="hidden"
-                  :while-in-view-options="{ once: true }"
+                  :in-view-options="{ once: true }"
                   class="absolute bottom-0 left-0 w-full h-full bg-primary-50 dark:bg-primary-800"
                 ></motion.div>
               </motion.span>
@@ -58,44 +57,61 @@
           </p>
         </div>
       </div>
-
-      <motion.div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        <motion.div
-          v-for="item in [
-            {
-              icon: 'mdi:tools',
-              title: 'Précision et Perfection',
-              description: 'Nous visons l\'excellence dans chaque détail.',
-            },
-            {
-              icon: 'mdi:design',
-              title: 'Design Personnalisé',
-              description: 'Des créations uniques adaptées à votre style.',
-            },
-            {
-              icon: 'mdi:timer-outline',
-              title: 'Exécution Rapide',
-              description: 'Des délais optimisés sans compromettre la qualité.',
-            },
-          ]"
-          :key="item.title"
-          class="p-6 bg-white dark:bg-primary-900 rounded-lg shadow-sm text-center ring-1 ease-in-out duration-300 ring-primary-300/30"
-        >
-          <Icon
-            :name="item.icon"
-            size="50"
-            class="inline-block text-primary-200/70"
-          />
-          <h3 class="text-xl font-semibold">
-            <span class="font-display text-xl font-semibold">{{
-              item.title
-            }}</span>
-          </h3>
-          <p class="text-primary-600 dark:text-primary-100">
-            {{ item.description }}
-          </p>
-        </motion.div>
-      </motion.div>
+      <ClientOnly>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-8 gap-5 mt-12">
+          <div
+            v-for="(item, index) in [
+              {
+                icon: 'mdi:tools',
+                title: 'Précision et Perfection',
+                description: 'Nous visons l\'excellence dans chaque détail.',
+              },
+              {
+                icon: 'mdi:design',
+                title: 'Design Personnalisé',
+                description: 'Des créations uniques adaptées à votre style.',
+              },
+              {
+                icon: 'mdi:timer-outline',
+                title: 'Exécution Rapide',
+                description:
+                  'Des délais optimisés sans compromettre la qualité.',
+              },
+            ]"
+            :key="item.title"
+            v-motion
+            :initial="{ opacity: 0, y: 20, filter: 'blur(5px)' }"
+            :visible-once="{
+              opacity: 1,
+              y: 0,
+              filter: 'blur(0px)',
+              transition: {
+                duration: 400,
+                type: 'tween',
+                delay: 100 * index,
+                ease: 'easeInOut',
+              },
+            }"
+            class="p-4 lg:p-6 bg-white dark:bg-primary-900 rounded-lg shadow-sm text-center ring-1 ease-in-out duration-300 ring-primary-300/30"
+          >
+            <Icon
+              :name="item.icon"
+              size="50"
+              class="inline-block text-primary-200/70"
+            />
+            <h3 class="text-xl font-semibold">
+              <span class="font-display lg:text-xl text-lg font-semibold">{{
+                item.title
+              }}</span>
+            </h3>
+            <p
+              class="text-primary-600 text-xs lg:text-base dark:text-primary-100"
+            >
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </ClientOnly>
     </div>
   </section>
 </template>

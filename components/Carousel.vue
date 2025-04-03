@@ -1,6 +1,6 @@
 <template>
   <motion.div
-    class="relative min-w-screen h-screen overflow-hidden"
+    class="relative min-w-screen h-[100svh] overflow-hidden"
     :initial="{ filter: 'blur(15px)', scale: 1.5 }"
     :animate="{ filter: 'blur(0px)', scale: 1 }"
     :transition="{

@@ -1,12 +1,14 @@
 <template>
-  <main class="">
+  <main class="max-w-screen overflow-x-hidden">
     <SectionsHero :heroImages="heroImages" />
     <SectionsBrandStory />
+    <SectionsWhyUs />
     <SectionsStatistics :statistics="statistics" />
     <SectionsExpertise :expertiseItems="expertiseItems" />
     <SectionsRealizations :realizationImages="realizationImages" />
+    <SectionsDevis />
     <SectionsMap />
-    <SectionsContact />
+    <!-- <SectionsContact /> -->
   </main>
 </template>
 
@@ -22,7 +24,7 @@
 <style lang="scss">
   main {
     & > section:not(:first-of-type) {
-      @apply py-20 text-black dark:text-white;
+      @apply py-16 text-black dark:text-white max-sm:py-10 max-sm:px-2;
     }
 
     & > section:nth-of-type(odd):not(:first-of-type) {

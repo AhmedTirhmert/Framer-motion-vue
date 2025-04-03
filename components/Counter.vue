@@ -29,11 +29,11 @@
     stiffness: 100,
     duration: 1,
   });
-  const isInView = useInView(counterRef, { once: true, margin: '-100px' });
+  const isInView = useInView(counterRef, { once: true });
 
   const formatNumber = (num) => {
     if (num >= 1000000) return (num / 1000000).toFixed(0) + 'M+';
-    if (!(num % 1000)) return (num / 1000).toFixed(0) + 'K+';
+    if (!(num % 1000) || num >= 1000) return (num / 1000).toFixed(0) + 'K+';
 
     return num.toFixed(0) + '+';
   };

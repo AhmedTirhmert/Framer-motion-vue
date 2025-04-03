@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   @apply antialiased text-primary-800 dark:text-primary-100;
 }

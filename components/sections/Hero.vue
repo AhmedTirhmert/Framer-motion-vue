@@ -1,26 +1,26 @@
 <template>
-  <section class="relative h-screen">
-    <div class="absolute inset-0 h-screen max-w-screen overflow-hidden">
+  <section class="relative h-[100svh]">
+    <div class="absolute inset-0 h-full max-w-screen overflow-hidden">
       <Carousel :slides="heroImages" />
       <div class="absolute inset-0 bg-black/60"></div>
     </div>
 
     <div class="relative container mx-auto h-full flex items-center">
       <motion.div
-        class="xl:max-w-3xl max-w-2xl max-sm:px-8 text text-center xl:text-start max-xl:mx-auto"
+        class="xl:max-w-3xl max-w-2xl max-sm:px-4 text text-center xl:text-start max-xl:mx-auto"
         initial="hidden"
         animate="visible"
         :variants="HeroItems"
       >
         <motion.div :variants="heroItem">
           <h1
-            class="font-display font-bold text-4xl md:text-6xl mb-6 text-white"
+            class="font-display font-bold text-3xl md:text-6xl mb-6 text-white"
           >
             Transformez vos espaces, créez vos rêves.
           </h1>
         </motion.div>
         <motion.div :variants="heroItem">
-          <p class="text-base lg:text-xl mb-8 text-white">
+          <p class="text-sm lg:text-xl mb-8 text-white">
             Découvrez des cuisines sur mesure, des salles de bain élégantes et
             des dressings personnalisés conçus pour sublimer votre intérieur.
             Chez ELITEMDF, nous donnons vie à vos idées avec précision et
@@ -32,7 +32,7 @@
             to="/products"
             class="inline-flex items-center px-6 py-3 text-sm bg-white text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
           >
-            Explorez Nos Collections
+            Voir nos réalisations
             <Icon
               name="material-symbols:arrow-forward"
               size="20"
