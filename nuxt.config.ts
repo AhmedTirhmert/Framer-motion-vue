@@ -1,14 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@vueuse/nuxt',
     'nuxt-icon',
-    '@nuxtjs/google-fonts',
     'motion-v/nuxt',
     '@nuxt/image',
     '@vueuse/motion/nuxt',
@@ -29,23 +28,18 @@ export default defineNuxtConfig({
       },
     },
   },
-  googleFonts: {
-    families: {
-      'Playfair+Display': [400, 500, 600, 700],
-      'Montserrat': [300, 400, 500, 600],
-    },
-    display: 'swap',
-    preload: true,
-    useStylesheet: true,
-  },
   css: ['@/assets/css/main.css'],
   nitro: {
     prerender: {
       routes: ['/'],
     },
     compressPublicAssets: true,
-    headers: {
-      'Cache-Control': 'public, max-age=31536000, immutable',
+    routeRules: {
+      '/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      },
     },
   },
   app: {

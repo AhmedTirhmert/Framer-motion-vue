@@ -1,13 +1,13 @@
 <template>
   <main class="max-w-screen overflow-x-hidden">
-    <SectionsHero :heroImages="heroImages" />
-    <SectionsBrandStory />
-    <SectionsWhyUs />
-    <SectionsStatistics :statistics="statistics" />
-    <SectionsExpertise :expertiseItems="expertiseItems" />
-    <SectionsRealizations :realizationImages="realizationImages" />
-    <SectionsDevis />
-    <SectionsMap />
+    <LazySectionsHero :heroImages="heroImages" />
+    <LazySectionsBrandStory />
+    <LazySectionsWhyUs />
+    <LazySectionsStatistics :statistics="statistics" />
+    <LazySectionsExpertise :expertiseItems="expertiseItems" />
+    <LazySectionsRealizations :realizationImages="realizationImages" />
+    <LazySectionsDevis />
+    <LazySectionsMap />
     <!-- <SectionsContact /> -->
   </main>
 </template>

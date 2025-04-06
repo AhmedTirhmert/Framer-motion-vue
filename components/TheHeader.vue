@@ -42,6 +42,8 @@
               src="/images/logo-light.png"
               alt="Logo"
               class=""
+              width="40"
+              height="40"
               format="webp"
               priority
               preload
@@ -51,39 +53,37 @@
         <div
           class="flex font-display flex-col items-start justify-between h-full ml-1 gap-0 uppercase overflow-hidden"
         >
-          <AnimatePresence>
-            <motion.h2
-              :animate="{
-                opacity: [0, 1],
-                x: ['-100%', 0],
-                filter: ['blur(5px)', 'blur(0px)'],
-              }"
-              :transition="{
-                delay: 0.5,
-                duration: 1,
-                type: 'tween',
-                ease: [0.22, 1, 0.36, 1],
-              }"
-              class="leading-none font-semibold tracking-wider text-lg"
-            >
-              Elite
-            </motion.h2>
-            <motion.h2
-              :animate="{
-                opacity: [0, 1],
-                x: ['-100%', 0],
-                filter: ['blur(5px)', 'blur(0px)'],
-              }"
-              :transition="{
-                delay: 0.5,
-                duration: 1,
-                type: 'tween',
-                ease: [0.22, 1, 0.36, 1],
-              }"
-              class="leading-none font-semibold tracking-wider text-lg"
-              >MDF</motion.h2
-            >
-          </AnimatePresence>
+          <motion.h2
+            :animate="{
+              opacity: [0, 1],
+              x: ['-100%', 0],
+              filter: ['blur(5px)', 'blur(0px)'],
+            }"
+            :transition="{
+              delay: 0.5,
+              duration: 1,
+              type: 'tween',
+              ease: [0.22, 1, 0.36, 1],
+            }"
+            class="leading-none font-semibold tracking-wider text-lg"
+          >
+            Elite
+          </motion.h2>
+          <motion.h2
+            :animate="{
+              opacity: [0, 1],
+              x: ['-100%', 0],
+              filter: ['blur(5px)', 'blur(0px)'],
+            }"
+            :transition="{
+              delay: 0.5,
+              duration: 1,
+              type: 'tween',
+              ease: [0.22, 1, 0.36, 1],
+            }"
+            class="leading-none font-semibold tracking-wider text-lg"
+            >MDF</motion.h2
+          >
         </div>
       </NuxtLink>
 
@@ -272,7 +272,6 @@
   const menuItems = [
     { label: 'Products', path: '/products' },
     { label: 'About', path: '/about' },
-    { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
   ];
 </script>
