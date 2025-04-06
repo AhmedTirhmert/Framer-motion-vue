@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
@@ -35,8 +35,19 @@ export default defineNuxtConfig({
       'Montserrat': [300, 400, 500, 600],
     },
     display: 'swap',
+    preload: true,
+    useStylesheet: true,
   },
   css: ['@/assets/css/main.css'],
+  nitro: {
+    prerender: {
+      routes: ['/'],
+    },
+    compressPublicAssets: true,
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    },
+  },
   app: {
     pageTransition: {
       name: 'page',

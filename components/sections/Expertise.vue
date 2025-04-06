@@ -32,7 +32,7 @@
           <div
             v-for="(item, index) in expertiseItems"
             :key="`expertise_${index}`"
-            class="p-4 lg:p-6 bg-white h-auto dark:bg-primary-900 grid items-center gap-2 rounded-lg shadow-sm ring-1 ease-in-out duration-300 ring-primary-300/30"
+            class="p-4 lg:p-6 bg-white h-auto dark:bg-transparent grid items-center gap-2 rounded-lg shadow-sm ring-1 ease-in-out duration-300 ring-primary-300/30"
             v-motion
             :initial="{
               opacity: 0,

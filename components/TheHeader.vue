@@ -35,7 +35,7 @@
               delay: 0.5,
               duration: 1,
               type: 'tween',
-              ease: 'easeInOut',
+              ease: [0.22, 1, 0.36, 1],
             }"
           >
             <NuxtImg
@@ -62,7 +62,7 @@
                 delay: 0.5,
                 duration: 1,
                 type: 'tween',
-                ease: 'easeInOut',
+                ease: [0.22, 1, 0.36, 1],
               }"
               class="leading-none font-semibold tracking-wider text-lg"
             >
@@ -78,7 +78,7 @@
                 delay: 0.5,
                 duration: 1,
                 type: 'tween',
-                ease: 'easeInOut',
+                ease: [0.22, 1, 0.36, 1],
               }"
               class="leading-none font-semibold tracking-wider text-lg"
               >MDF</motion.h2
@@ -106,7 +106,43 @@
           />
         </button> -->
         <button class="md:hidden" @click="isMenuOpen = !isMenuOpen">
-          <Icon name="ph:list" class="w-6 h-6" />
+          <motion.svg
+            :animate="isMenuOpen ? 'open' : 'closed'"
+            width="30"
+            height="25"
+            viewBox="0 0 30 23"
+            class="outline-none"
+          >
+            <motion.path
+              class="stroke-primary-100 outline-none"
+              stroke-width="3"
+              stroke-linecap="round"
+              :variants="{
+                closed: { d: 'M 2 2.5 L 25 2.5' },
+                open: { d: 'M 3 16.5 L 20 2.5' },
+              }"
+            />
+            <motion.path
+              class="stroke-primary-100 outline-none"
+              stroke-width="3"
+              stroke-linecap="round"
+              d="M 2 9.423 L 25 9.423"
+              :variants="{
+                closed: { opacity: 1 },
+                open: { opacity: 0 },
+              }"
+              :transition="{ duration: 0.1 }"
+            />
+            <motion.path
+              class="stroke-primary-100 outline-none"
+              stroke-width="3"
+              stroke-linecap="round"
+              :variants="{
+                closed: { d: 'M 2 16.346 L 25 16.346' },
+                open: { d: 'M 3 2.5 L 20 16.346' },
+              }"
+            />
+          </motion.svg>
         </button>
       </div>
     </nav>
@@ -132,7 +168,7 @@
         }"
       >
         <div class="flex flex-col h-full w-full px-4 py-4 justify-between">
-          <div class="">
+          <div class="grid grid-cols-1 gap-2">
             <motion.span
               v-for="(item, index) in menuItems"
               :key="item.path"
@@ -148,7 +184,7 @@
                 mass: 0.8,
                 ease: 'easeInOut',
               }"
-              class="block font-display text-3xl text-center py-2 text-primary-700 dark:text-primary-200 hover:text-primary-900 dark:hover:text-white transition-colors"
+              class="block font-display text-4xl text-center py-2 text-primary-700 dark:text-primary-200 hover:text-primary-900 dark:hover:text-white transition-colors"
             >
               <NuxtLink :to="item.path" class="" @click="isMenuOpen = false">
                 {{ item.label }}
@@ -162,7 +198,7 @@
               :exit="{ opacity: 0, y: 20 }"
               :transition="{
                 duration: 0.3,
-                delay: menuItems.length * 0.2 + 0.2,
+                delay: 0.4,
                 type: 'spring',
                 stiffness: 150,
                 damping: 20,
@@ -183,7 +219,7 @@
                 :exit="{ opacity: 0, y: 20 }"
                 :transition="{
                   duration: 0.3,
-                  delay: menuItems.length * 0.2 + 0.3 + index * 0.2,
+                  delay: 0.5 + index * 0.2,
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,

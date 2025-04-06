@@ -20,9 +20,20 @@
         :key="index"
         class="w-screen h-screen flex-shrink-0"
       >
-        <div
+        <!-- <div
           class="w-full h-full bg-cover bg-center"
           :style="{ backgroundImage: `url(${slide})` }"
+        /> -->
+
+        <NuxtImg
+          :src="slide"
+          class="w-full h-full object-cover"
+          format="webp"
+          priority
+          :preload="index === 0"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw"
+          :loading="index === 0 ? 'eager' : 'lazy'"
+          :alt="`Slide ${index + 1}`"
         />
       </div>
     </motion.div>

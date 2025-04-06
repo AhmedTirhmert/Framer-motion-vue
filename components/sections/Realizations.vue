@@ -33,8 +33,11 @@
           :key="`real_${index}`"
           class="relative h-64 group overflow-hidden rounded-lg hover:cursor-pointer hover:ring-1 transition-all ease-in-out duration-300 ring-primary-300"
         >
-          <img
+          <NuxtImg
             :src="image"
+            format="avif"
+            sizes="sm:100vw md:100vw lg:100vw xl:100vw"
+            loading="lazy"
             :alt="`Realization ${index + 1}`"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
