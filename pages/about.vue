@@ -1,155 +1,267 @@
 <template>
-  <main class="pt-24">
-    <div class="container mx-auto px-4">
-      <!-- Hero Section -->
-      <section class="text-center mb-16">
-        <h1 
-          class="font-display text-4xl md:text-5xl mb-6"
-          v-motion
-          :initial="{ opacity: 0, y: 50 }"
-          :enter="{ opacity: 1, y: 0 }"
-        >
-          Our Story
-        </h1>
-        <p 
-          class="text-lg text-primary-600 dark:text-primary-400 max-w-2xl mx-auto"
-          v-motion
-          :initial="{ opacity: 0 }"
-          :enter="{ opacity: 1, delay: 200 }"
-        >
-          Since 2010, we've been dedicated to creating exceptional furniture that combines
-          innovative design with traditional craftsmanship.
-        </p>
-      </section>
+  <main class="pt-24 container max-w-4xl 2xl:max-w-6xl grid gap-5 mx-auto">
+    <!-- Hero Section -->
+    <motion.section
+      class="text-center"
+      :variants="variant"
+      :transition="transition"
+      while-in-view="visible"
+      initial="hidden"
+      :in-view-options="{ once: true }"
+    >
+      <h1
+        class="font-display text-4xl md:text-5xl mb-6 text-primary-800 dark:text-primary-100"
+      >
+        ELITE MDF
+      </h1>
+      <p
+        class="text-lg text-primary-600 text-balance dark:text-primary-200 max-w-2xl mx-auto"
+      >
+        Chez ELITEMDF, nous sommes bien plus que des menuisiers — nous sommes
+        des créateurs d’intérieurs sur mesure. De la conception à la
+        fabrication, jusqu’à la pose complète, nous réalisons des cuisines,
+        salles de bain, placards, dressings et tous types de rangements pour les
+        espaces résidentiels et professionnels.
+      </p>
+    </motion.section>
 
-      <!-- Vision Section -->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-        <div 
-          class="relative aspect-square rounded-lg overflow-hidden"
-          v-motion
-          :initial="{ opacity: 0, x: -50 }"
-          :enter="{ opacity: 1, x: 0 }"
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
-            alt="Craftsman at work"
-            class="w-full h-full object-cover"
+    <!-- Presence Section -->
+    <motion.section
+      :variants="variant"
+      :transition="transition"
+      while-in-view="visible"
+      initial="hidden"
+      :in-view-options="{ once: true }"
+      class="text-center"
+    >
+      <h2
+        class="font-display text-3xl mb-6 text-primary-800 dark:text-primary-100"
+      >
+        Une présence forte à Agadir et dans toute la région SOUSS MASSA
+      </h2>
+      <p
+        class="text-primary-600 text-balance dark:text-primary-200 max-w-2xl mx-auto"
+      >
+        Basés à Agadir, nous intervenons dans toute la région Souss Massa et
+        étendons notre activité sur l’ensemble du territoire national. Notre
+        objectif : répondre à chaque besoin, où que vous soyez, avec la même
+        exigence de qualité et d’accompagnement.
+      </p>
+    </motion.section>
+
+    <!-- Commitments Section -->
+    <motion.section
+      :variants="variant"
+      :transition="transition"
+      while-in-view="visible"
+      initial="hidden"
+      :in-view-options="{ once: true }"
+      class=""
+    >
+      <h2
+        class="font-display text-3xl text-center mb-12 text-primary-800 dark:text-primary-100"
+      >
+        Nos engagements
+      </h2>
+
+      <ul class="space-y-2 ml-6 list-disc text-primary-200">
+        <li>
+          <Icon
+            size="20"
+            name="mdi:check-circle-outline"
+            class="inline-block mr-1 text-base"
           />
-        </div>
-        <div
-          v-motion
-          :initial="{ opacity: 0, x: 50 }"
-          :enter="{ opacity: 1, x: 0 }"
-        >
-          <h2 class="font-display text-3xl mb-6">Our Vision</h2>
-          <p class="text-primary-600 dark:text-primary-400 mb-4">
-            At MDF Luxury, we believe that furniture is more than just functional pieces - 
-            it's an expression of style, comfort, and sophistication that transforms living spaces 
-            into extraordinary environments.
-          </p>
-          <p class="text-primary-600 dark:text-primary-400">
-            Our commitment to quality craftsmanship and innovative design has made us a leader 
-            in luxury furniture manufacturing, creating pieces that stand the test of time.
-          </p>
-        </div>
-      </section>
+          Une qualité irréprochable
+        </li>
+        <li>
+          <Icon
+            size="20"
+            name="mdi:scale-balance"
+            class="inline-block mr-1 text-base"
+          />
+          Des prix transparents et justes
+        </li>
+        <li>
+          <Icon
+            size="20"
+            name="mdi:clock-check-outline"
+            class="inline-block mr-1 text-base"
+          />
+          Le respect strict des délais annoncés
+        </li>
+        <li>
+          <Icon
+            size="20"
+            name="mdi:handshake-outline"
+            class="inline-block mr-1 text-base"
+          />
+          Un accompagnement sur mesure et durable
+        </li>
+      </ul>
+      <p class="text-primary-600 dark:text-primary-200 text-center mt-6">
+        Nous construisons des relations de confiance avec nos clients, en
+        plaçant leur style de vie, leurs critères et leur budget au cœur de
+        notre processus de création.
+      </p>
+    </motion.section>
 
-      <!-- Values Section -->
-      <section class="mb-20">
-        <h2 
-          class="font-display text-3xl text-center mb-12"
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0 }"
+    <motion.section
+      :variants="variant"
+      :transition="transition"
+      while-in-view="visible"
+      initial="hidden"
+      :in-view-options="{ once: true }"
+      class="bg-neutral-950 text-white mx-auto"
+    >
+      <!-- Title -->
+      <div class="text-center mb-8">
+        <h2
+          class="font-display text-3xl text-center mb-12 text-primary-800 dark:text-primary-100"
         >
-          Our Values
+          Notre Procédure
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div 
-            v-for="value in values" 
-            :key="value.title"
-            v-motion
-            :initial="{ opacity: 0, y: 20 }"
-            :enter="{ opacity: 1, y: 0 }"
-            class="text-center p-6"
-          >
-            <Icon :name="value.icon" class="w-12 h-12 mb-4 mx-auto text-primary-800 dark:text-primary-200" />
-            <h3 class="font-display text-xl mb-4">{{ value.title }}</h3>
-            <p class="text-primary-600 dark:text-primary-400">{{ value.description }}</p>
-          </div>
-        </div>
-      </section>
+        <p class="text-primary-200 mt-2">
+          Une approche claire en 4 étapes pour donner vie à vos projets
+        </p>
+      </div>
 
-      <!-- Team Section -->
-      <section class="mb-20">
-        <h2 
-          class="font-display text-3xl text-center mb-12"
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0 }"
+      <!-- Steps Grid -->
+      <div
+        class="flex flex-col sm:flex-row items-center gap-8 justify-center flex-wrap"
+      >
+        <motion.div
+          v-for="(step, index) in steps"
+          :key="step.title"
+          :initial="{ opacity: 0, y: 40 }"
+          :while-in-view="{ opacity: 1, y: 0 }"
+          :in-view-options="{ once: true }"
+          :transition="{
+            delay: index * 0.2,
+            duration: 0.6,
+            ease: 'easeInOut',
+          }"
+          class="flex items-start gap-4 md:basis-[calc(100%/2-2rem)] bg-neutral-900 rounded-xl p-5 border border-primary-800"
         >
-          Our Team
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div 
-            v-for="member in team" 
-            :key="member.name"
-            v-motion
-            :initial="{ opacity: 0, scale: 0.9 }"
-            :enter="{ opacity: 1, scale: 1 }"
-            class="text-center"
-          >
-            <div class="relative aspect-square rounded-full overflow-hidden mb-4">
-              <img :src="member.image" :alt="member.name" class="w-full h-full object-cover" />
-            </div>
-            <h3 class="font-display text-xl mb-2">{{ member.name }}</h3>
-            <p class="text-primary-600 dark:text-primary-400">{{ member.role }}</p>
+          <Icon
+            :name="step.icon"
+            class="text-primary-200 text-3xl shrink-0 mt-1"
+          />
+          <div>
+            <h3 class="text-lg font-semibold mb-1 text-primary-100">
+              {{ step.title }}
+            </h3>
+            <p class="text-primary-200 text-sm">{{ step.description }}</p>
           </div>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </div>
+    </motion.section>
+    <!-- Priority Section -->
+    <motion.section
+      :variants="variant"
+      :transition="transition"
+      while-in-view="visible"
+      initial="hidden"
+      :in-view-options="{ once: true }"
+      class="text-center"
+    >
+      <h2
+        class="font-display text-3xl mb-6 text-primary-800 dark:text-primary-100"
+      >
+        Votre projet, notre priorité
+      </h2>
+      <p class="text-primary-600 dark:text-primary-200 max-w-2xl mx-auto">
+        De la première idée jusqu’à l’installation finale, nous vous
+        accompagnons pas à pas pour transformer vos idées en réalisations
+        concrètes, élégantes et durables.
+      </p>
+
+      <NuxtLink to="/contact">
+        <CTA>
+          <template #content> Demandez votre devis gratuit </template>
+        </CTA>
+      </NuxtLink>
+    </motion.section>
+    <img
+      src="/images/logo.png"
+      alt="Logo"
+      class="fixed max-lg:hidden left-0 top-[2rem] bottom-0 h-2/3 -translate-x-1/2 object-contain mix-blend-soft-light opacity-30 z-0"
+    />
+    <img
+      src="/images/logo.png"
+      alt="Logo"
+      class="fixed max-lg:hidden right-0 bottom-0 h-2/3 translate-x-1/2 object-contain mix-blend-soft-light opacity-30 z-0"
+    />
   </main>
 </template>
 
 <script setup>
-const values = [
-  {
-    icon: 'ph:diamond-fill',
-    title: 'Quality',
-    description: 'We use only the finest materials and craftsmanship in every piece we create.'
-  },
-  {
-    icon: 'ph:leaf-fill',
-    title: 'Sustainability',
-    description: 'Our commitment to environmental responsibility guides every decision we make.'
-  },
-  {
-    icon: 'ph:paint-brush-fill',
-    title: 'Innovation',
-    description: 'We continuously push the boundaries of design and functionality.'
-  }
-]
+  import { motion } from 'motion-v';
 
-const team = [
-  {
-    name: 'Sarah Johnson',
-    role: 'Creative Director',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400'
-  },
-  {
-    name: 'Michael Chen',
-    role: 'Head of Design',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400'
-  },
-  {
-    name: 'Emma Williams',
-    role: 'Production Manager',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400'
-  },
-  {
-    name: 'David Miller',
-    role: 'Quality Control',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400'
-  }
-]
+  const variant = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      filter: 'blur(5px)',
+    },
+  };
+
+  const transition = {
+    duration: 0.6,
+    type: 'tween',
+    ease: 'easeInOut',
+  };
+
+  const steps = [
+    {
+      icon: 'mdi:account-voice',
+      title: '1. Prise de contact',
+      description:
+        'Nous écoutons vos besoins, vos idées et vos inspirations afin de mieux comprendre votre vision.',
+    },
+    {
+      icon: 'mdi:floor-plan',
+      title: '2. Conception sur mesure',
+      description:
+        'Nos designers vous proposent un plan personnalisé, adapté à votre style et à votre espace.',
+    },
+    {
+      icon: 'mdi:hammer-wrench',
+      title: '3. Fabrication & Finitions',
+      description:
+        'Nous fabriquons vos meubles avec soin et précision dans notre atelier local.',
+    },
+    {
+      icon: 'mdi:truck-delivery-outline',
+      title: '4. Livraison & Installation',
+      description:
+        'Nous assurons la livraison et l’installation complète dans les délais convenus.',
+    },
+    {
+      icon: 'mdi:check-circle',
+      title: '5. Suivi & Support',
+      description:
+        'Nous restons à votre disposition pour toute question ou besoin d’assistance après l’installation.',
+    },
+  ];
 </script>
+
+<style lang="scss" scoped>
+  main {
+    & > section {
+      @apply py-8 px-4 text-black dark:text-white max-sm:py-10 max-sm:px-4 relative;
+    }
+
+    & > section:nth-of-type(even) {
+      @apply bg-primary-800/30;
+    }
+
+    & > section:nth-of-type(odd) {
+      @apply bg-primary-900;
+    }
+  }
+</style>

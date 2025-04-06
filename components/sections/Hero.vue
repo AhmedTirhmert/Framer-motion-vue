@@ -30,7 +30,7 @@
         <motion.div :variants="heroItem">
           <NuxtLink
             to="/products"
-            class="inline-flex items-center px-6 py-3 text-sm bg-white text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
+            class="inline-flex items-center px-6 py-3 text-sm bg-primary-100 text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
           >
             Voir nos réalisations
             <Icon

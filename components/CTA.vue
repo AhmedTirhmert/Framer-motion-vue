@@ -5,10 +5,10 @@
       duration: 0.4,
       ease: 'easeInOut',
     }"
-    class="p-[2px] rounded-full overflow-hidden relative bg-transparent cta mt-7"
+    class="p-[3px] rounded-full overflow-hidden relative bg-transparent cta mt-7"
   >
     <span
-      class="px-10 py-3 font-display text-neutral-100 font-light h-full w-full block text-xl rounded-full relative bg-primary-700 text-primary-50"
+      class="px-10 py-3 font-display text-neutral-100 font-light h-full w-full block text-xl rounded-full relative bg-primary-700 text-primary-100"
     >
       <slot name="content" />
     </span>

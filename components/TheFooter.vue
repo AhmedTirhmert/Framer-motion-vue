@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary-100 dark:bg-primary-800 text-white">
+  <footer class="bg-primary-100 dark:bg-primary-800 text-white relative z-10">
     <div class="container mx-auto px-4 py-12">
       <!-- Grid Layout for Footer Content -->
       <div
@@ -7,8 +7,10 @@
       >
         <!-- Company Info -->
         <div>
-          <h3 class="font-display text-xl mb-4">STE ELITE MDF</h3>
-          <p class="text-sm text-primary-600 dark:text-primary-100">
+          <h3 class="font-display text-primary-100 text-xl mb-4">
+            STE ELITE MDF
+          </h3>
+          <p class="text-sm text-primary-600 dark:text-primary-100/70">
             La plupart des idées pour l'habitat démarrent par d'innombrables
             pensées versatiles et rêves lointains. Chez ELITEMDF, nous ferons de
             notre mieux pour vous aider à organiser vos idées et réaliser
@@ -18,8 +20,12 @@
 
         <!-- Contact Info -->
         <div>
-          <h4 class="font-semibold mb-4">CONTACTEZ-NOUS</h4>
-          <ul class="space-y-2 text-sm text-primary-600 dark:text-primary-100">
+          <h4 class="font-semibold font-display text-primary-100 mb-4">
+            CONTACTEZ-NOUS
+          </h4>
+          <ul
+            class="space-y-2 text-sm text-primary-600 dark:text-primary-100/70"
+          >
             <li>05 28 26 36 86</li>
             <li>06 61 51 99 50</li>
             <li>ELITEMDFsarl@gmail.com</li>
@@ -29,8 +35,12 @@
 
         <!-- Services -->
         <div>
-          <h4 class="font-semibold mb-4">ELITEMDF</h4>
-          <ul class="space-y-2 text-sm text-primary-600 dark:text-primary-100">
+          <h4 class="font-semibold font-display text-primary-100 mb-4">
+            ELITEMDF
+          </h4>
+          <ul
+            class="space-y-2 text-sm text-primary-600 dark:text-primary-100/70"
+          >
             <li>cuisine</li>
             <li>la salle de bain</li>
             <li>habitat et interieur</li>

@@ -21,7 +21,7 @@
   } from '~/constants/content';
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   main {
     & > section:not(:first-of-type) {
       @apply py-16 text-black dark:text-white max-sm:py-10 max-sm:px-2;
