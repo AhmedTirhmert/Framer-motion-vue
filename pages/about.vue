@@ -181,6 +181,7 @@
         </CTA>
       </NuxtLink>
     </motion.section>
+<!--
     <img
       src="/images/logo.png"
       alt="Logo"
@@ -191,6 +192,7 @@
       alt="Logo"
       class="fixed max-lg:hidden right-0 bottom-0 h-2/3 translate-x-1/2 object-contain mix-blend-soft-light opacity-30 z-0"
     />
+-->
   </main>
 </template>
 
