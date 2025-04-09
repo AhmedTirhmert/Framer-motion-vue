@@ -31,42 +31,36 @@
         <div class="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-5 mt-12">
           <div
             v-for="(item, index) in expertiseItems"
-            :key="`expertise_${index}`"
-            class="p-4 lg:p-6 bg-white h-auto dark:bg-transparent grid items-center gap-2 rounded-lg shadow-sm ring-1 ease-in-out duration-300 ring-primary-300/30"
+            :key="item.title"
+            class="p-4 lg:p-6 h-auto grid items-center gap-2 rounded-lg shadow-sm ring-1 ease-in-out duration-300 ring-primary-300/30 bg-transparent"
             v-motion
-            :initial="{
-              opacity: 0,
-              x: !isMobile ? '0%' : index % 2 ? '100%' : '-100%',
-              filter: 'blur(15px)',
-              scale: !isMobile ? 0.8 : 1,
-            }"
+            :initial="{ opacity: 0, y: 20, filter: 'blur(5px)' }"
             :visible-once="{
               opacity: 1,
-              x: '0%',
-              scale: 1,
+              y: 0,
               filter: 'blur(0px)',
               transition: {
-                duration: 600,
+                duration: 400,
                 type: 'tween',
                 delay: 100 * index,
                 ease: 'easeInOut',
               },
             }"
           >
-            <div class="flex text-start items-center gap-4">
+            <div class="flex items-center gap-2">
               <Icon
-                :name="item?.icon"
+                :name="item.icon"
                 size="24"
                 class="inline-block text-primary-200/70"
               />
               <h3 class="font-display text-xl font-semibold">
-                {{ item?.title }}
+                {{ item.title }}
               </h3>
             </div>
             <p
               class="text-primary-600 text-sm lg:text-base dark:text-primary-100"
             >
-              {{ item?.description }}
+              {{ item.description }}
             </p>
           </div>
         </div>
@@ -75,9 +69,10 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
   import { motion } from 'motion-v';
   import { useMediaQuery } from '@vueuse/core';
+  import { isOdd } from '#imports';
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   defineProps({

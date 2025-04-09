@@ -28,6 +28,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  image: {
+    domains: ['images.unsplash.com'],
+  },
   css: ['@/assets/css/main.css'],
   nitro: {
     prerender: {

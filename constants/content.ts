@@ -22,33 +22,6 @@ export const resolveItemTransition = (
   };
 };
 
-export const featuredCollections = [
-  {
-    id: 1,
-    name: 'Intérieur Moderne',
-    description: 'Designs contemporains pour la maison moderne',
-    image:
-      'https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?q=80&w=800',
-    path: '/products/modern-living',
-  },
-  {
-    id: 2,
-    name: 'Élégance de la Salle à Manger',
-    description: 'Collections sophistiquées pour salle à manger',
-    image:
-      'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800',
-    path: '/products/dining-elegance',
-  },
-  {
-    id: 3,
-    name: 'Bureau de Luxe',
-    description: 'Mobilier de bureau haut de gamme',
-    image:
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800',
-    path: '/products/office-luxury',
-  },
-];
-
 export const heroImages = [
   '/images/HeroImage1.png',
   '/images/HeroImage2.png',
@@ -77,13 +50,53 @@ export const expertiseItems = [
   },
 ];
 
-export const realizationImages = [
-  'https://images.unsplash.com/photo-1544691560-fc2053d97726?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1586208958839-06c17cacdf08?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://plus.unsplash.com/premium_photo-1661877303180-19a028c21048?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://plus.unsplash.com/premium_photo-1681487131497-46b5abebf1b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1623050804066-42bcedb4e81d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D',
+export const collection = [
+  {
+    title: 'Salon',
+    category: 'Salon',
+    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c',
+  },
+  {
+    title: 'Salon Marocaine',
+    category: 'Salon',
+    image:
+      'https://images.unsplash.com/flagged/photo-1572018346951-32a7de3adcc7',
+  },
+  {
+    title: 'Salle à manger',
+    category: 'Salle à manger',
+    image: 'https://images.unsplash.com/photo-1622653533660-a1538fe8424c',
+  },
+  {
+    title: 'Chambre',
+    category: 'Chambre',
+    image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a',
+  },
+  {
+    title: 'Bureau',
+    category: 'Bureau',
+    image: 'https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d',
+  },
+  {
+    title: 'Dressing',
+    category: 'Dressing',
+    image: 'https://images.unsplash.com/photo-1672137233327-37b0c1049e77',
+  },
+  {
+    title: 'Cuisine',
+    category: 'cuisine',
+    image: 'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4',
+  },
+  {
+    title: 'Terrasse',
+    category: 'Terrasse',
+    image: 'https://images.unsplash.com/photo-1613685302957-3a6fc45346ef',
+  },
+  {
+    title: 'Salle de bain',
+    category: 'Salle de bain',
+    image: 'https://images.unsplash.com/photo-1629227339675-0cfb9b64dc10',
+  },
 ];
 
 export const statistics = [

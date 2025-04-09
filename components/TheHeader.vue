@@ -32,7 +32,7 @@
               x: ['100%', 0],
             }"
             :transition="{
-              delay: 0.5,
+              delay: 0.7,
               duration: 1,
               type: 'tween',
               ease: [0.22, 1, 0.36, 1],
@@ -60,7 +60,7 @@
               filter: ['blur(5px)', 'blur(0px)'],
             }"
             :transition="{
-              delay: 0.5,
+              delay: 0.7,
               duration: 1,
               type: 'tween',
               ease: [0.22, 1, 0.36, 1],
@@ -76,7 +76,7 @@
               filter: ['blur(5px)', 'blur(0px)'],
             }"
             :transition="{
-              delay: 0.5,
+              delay: 0.7,
               duration: 1,
               type: 'tween',
               ease: [0.22, 1, 0.36, 1],
@@ -270,8 +270,8 @@
     },
   ];
   const menuItems = [
-    { label: 'Products', path: '/products' },
-    { label: 'About', path: '/about' },
+    { label: 'Collection', path: '/collections' },
+    { label: 'À propos', path: '/about' },
     { label: 'Contact', path: '/contact' },
   ];
 </script>

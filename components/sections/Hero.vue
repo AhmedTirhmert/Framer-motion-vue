@@ -28,8 +28,8 @@
           </p>
         </motion.div>
         <motion.div :variants="heroItem">
-          <NuxtLink
-            to="/products"
+          <button
+            @click="scrollToSection('realizations')"
             class="inline-flex items-center px-6 py-3 text-sm bg-primary-100 text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
           >
             Voir nos réalisations
@@ -38,7 +38,7 @@
               size="20"
               class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
             />
-          </NuxtLink>
+          </button>
         </motion.div>
       </motion.div>
     </div>
@@ -47,6 +47,14 @@
 
 <script setup lang="ts">
   import { motion } from 'motion-v';
+  const { scrollTo } = useLenis();
+  const scrollToSection = (section: string) => {
+    const el = document.getElementById(section) ?? section;
+    scrollTo(el, {
+      duration: 2,
+      easing: (t: number) => t,
+    });
+  };
   defineProps({
     heroImages: {
       type: Array,

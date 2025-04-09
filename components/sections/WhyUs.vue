@@ -4,18 +4,7 @@
       <!-- Header -->
       <motion.div class="text-center mb-12 space-y-4">
         <motion.h2
-          :variants="{
-            visible: {
-              opacity: 1,
-              y: 0,
-              filter: 'blur(0px)',
-            },
-            hidden: {
-              opacity: 0,
-              y: 20,
-              filter: 'blur(5px)',
-            },
-          }"
+          :variants="bluredSlideUp"
           :transition="{
             duration: 0.6,
             type: 'tween',
@@ -27,12 +16,23 @@
           class="font-display text-3xl lg:text-4xl mb-8"
           >Pourquoi Nous Choisir</motion.h2
         >
-        <p class="text-sm md:text-base text-primary-600 dark:text-primary-100">
+        <motion.p
+          :variants="bluredSlideUp"
+          :transition="{
+            duration: 0.7,
+            type: 'tween',
+            ease: 'easeInOut',
+          }"
+          while-in-view="visible"
+          initial="hidden"
+          :in-view-options="{ once: true }"
+          class="text-sm md:text-base text-primary-600 dark:text-primary-100"
+        >
           Nous sommes spécialisés dans la conception, la fabrication et la pose
           de cuisines, salles de bain, placards et dressings. Actifs à Agadir et
           dans la région SOUSS MASSA, nous répondons à toutes vos demandes
           d'aménagement avec qualité, rapidité et personnalisation.
-        </p>
+        </motion.p>
       </motion.div>
 
       <!-- Benefits Grid -->
@@ -43,12 +43,12 @@
             :key="item.label"
             :initial="{
               opacity: 0,
-              y: isMobile ? 0 : isOdd(index) ? 40 : -40,
+              scale: isMobile ? 1 : 0.6,
               x: !isMobile ? 0 : isOdd(index) ? '100%' : '-100%',
             }"
             :while-in-view="{
               opacity: 1,
-              y: 0,
+              scale: 1,
               x: '0%',
             }"
             :transition="{
@@ -85,7 +85,18 @@
   import { useMediaQuery } from '@vueuse/core';
 
   const isMobile = useMediaQuery('(max-width: 768px)');
-
+  const bluredSlideUp = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      filter: 'blur(5px)',
+    },
+  };
   const features = [
     {
       icon: 'mdi:ruler-square-compass',

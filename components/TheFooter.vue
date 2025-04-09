@@ -1,5 +1,7 @@
 <template>
-  <footer class="bg-primary-100 dark:bg-primary-800 text-white relative z-10">
+  <footer
+    class="max-lg:bg-[url('/images/texture3.png')] bg-primary-100 dark:bg-primary-800 text-white relative z-10"
+  >
     <div class="container mx-auto px-4 py-12">
       <!-- Grid Layout for Footer Content -->
       <div
@@ -85,6 +87,10 @@
   // No additional script logic is required for this footer
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  footer {
+    background-blend-mode: screen;
+    -moz-background-blend-mode: screen;
+  }
   /* Tailwind handles responsiveness, no additional styles needed */
 </style>
