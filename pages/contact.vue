@@ -1,137 +1,128 @@
 <template>
   <main class="pt-24">
     <div class="container mx-auto px-4">
-      <!-- Hero Section -->
-      <section class="text-center mb-16">
-        <h1 
-          class="font-display text-4xl md:text-5xl mb-6"
-          v-motion
-          :initial="{ opacity: 0, y: 50 }"
-          :enter="{ opacity: 1, y: 0 }"
-        >
-          Contact Us
-        </h1>
-        <p 
-          class="text-lg text-primary-600 dark:text-primary-400 max-w-2xl mx-auto"
-          v-motion
-          :initial="{ opacity: 0 }"
-          :enter="{ opacity: 1, delay: 200 }"
-        >
-          Get in touch with our team to discuss your furniture needs or visit our showroom.
-        </p>
+      <section class="px-6 py-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Formulaire de contact -->
+          <div>
+            <h2 class="text-3xl font-display mb-4">Écrivez-nous</h2>
+            <p class="text-neutral-400 mb-6">
+              Pour toute demande de projet ou question, notre équipe vous répond
+              rapidement.
+            </p>
+            <form class="space-y-4">
+              <div>
+                <label class="block mb-1 text-sm">Nom</label>
+                <input
+                  type="text"
+                  class="w-full bg-walnut-800 text-white p-3 rounded"
+                />
+              </div>
+              <div>
+                <label class="block mb-1 text-sm">Email</label>
+                <input
+                  type="email"
+                  class="w-full bg-walnut-800 text-white p-3 rounded"
+                />
+              </div>
+              <div>
+                <label class="block mb-1 text-sm">Sujet</label>
+                <input
+                  type="text"
+                  class="w-full bg-walnut-800 text-white p-3 rounded"
+                />
+              </div>
+              <div>
+                <label class="block mb-1 text-sm">Message</label>
+                <textarea
+                  rows="5"
+                  class="w-full bg-walnut-800 text-white p-3 rounded"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-walnut-500 hover:bg-walnut-600 text-white font-semibold py-3 rounded transition"
+              >
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+
+          <!-- Coordonnées & réseaux sociaux -->
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-3xl font-display mb-4">Contactez-nous</h2>
+              <ul class="space-y-2 text-neutral-300">
+                <li>
+                  <strong>Téléphone :</strong>
+                  <a href="tel:+212612345678" class="text-white hover:underline"
+                    >+212 6 12 34 56 78</a
+                  >
+                </li>
+                <li>
+                  <strong>WhatsApp :</strong>
+                  <a
+                    href="https://wa.me/212612345678"
+                    target="_blank"
+                    class="text-white hover:underline"
+                    >Discuter maintenant</a
+                  >
+                </li>
+                <li>
+                  <strong>Email :</strong>
+                  <a
+                    href="mailto:contact@elitemdf.ma"
+                    class="text-white hover:underline"
+                    >contact@elitemdf.ma</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-display mb-2">Suivez-nous</h2>
+              <div class="flex gap-4 text-2xl">
+                <a
+                  href="https://instagram.com/elitemdf"
+                  target="_blank"
+                  class="hover:text-walnut-500"
+                >
+                  <Icon name="mdi:instagram" size="40" />
+                </a>
+                <a
+                  href="https://facebook.com/elitemdf"
+                  target="_blank"
+                  class="hover:text-walnut-500"
+                >
+                  <Icon name="mdi:facebook" size="40" />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-display mb-2">Adresse</h2>
+              <p class="text-neutral-300">
+                Zone Artisanale<br />
+                Ouled Teïma, Maroc
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Contact Form -->
-        <section
-          v-motion
-          :initial="{ opacity: 0, x: -50 }"
-          :enter="{ opacity: 1, x: 0 }"
-        >
-          <h2 class="font-display text-2xl mb-6">Send us a Message</h2>
-          <form @submit.prevent="submitForm" class="space-y-6">
-            <div>
-              <label class="block text-sm font-medium mb-2">Name</label>
-              <input 
-                type="text" 
-                v-model="form.name"
-                class="w-full px-4 py-2 rounded-md bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700"
-                required
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-2">Email</label>
-              <input 
-                type="email" 
-                v-model="form.email"
-                class="w-full px-4 py-2 rounded-md bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700"
-                required
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-2">Subject</label>
-              <input 
-                type="text" 
-                v-model="form.subject"
-                class="w-full px-4 py-2 rounded-md bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700"
-                required
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-2">Message</label>
-              <textarea 
-                v-model="form.message"
-                rows="4"
-                class="w-full px-4 py-2 rounded-md bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700"
-                required
-              ></textarea>
-            </div>
-            <button 
-              type="submit"
-              class="w-full px-6 py-3 bg-primary-900 dark:bg-primary-100 text-white dark:text-primary-900 rounded-md hover:bg-primary-800 dark:hover:bg-primary-200 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
-        </section>
-
-        <!-- Contact Information -->
-        <section
-          v-motion
-          :initial="{ opacity: 0, x: 50 }"
-          :enter="{ opacity: 1, x: 0 }"
-        >
-          <h2 class="font-display text-2xl mb-6">Visit Our Showroom</h2>
-          <div class="space-y-6">
-            <div>
-              <h3 class="font-semibold mb-2">Address</h3>
-              <p class="text-primary-600 dark:text-primary-400">
-                123 Luxury Lane<br>
-                Design District<br>
-                New York, NY 10001
-              </p>
-            </div>
-            <div>
-              <h3 class="font-semibold mb-2">Hours</h3>
-              <p class="text-primary-600 dark:text-primary-400">
-                Monday - Friday: 10:00 AM - 7:00 PM<br>
-                Saturday: 11:00 AM - 6:00 PM<br>
-                Sunday: Closed
-              </p>
-            </div>
-            <div>
-              <h3 class="font-semibold mb-2">Contact</h3>
-              <p class="text-primary-600 dark:text-primary-400">
-                Phone: +1 (555) 123-4567<br>
-                Email: contact@mdfluxury.com
-              </p>
-            </div>
-          </div>
-
-          <!-- Map -->
-          <div class="mt-8 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1000"
-              alt="Location map"
-              class="w-full h-64 object-cover"
-            />
-          </div>
-        </section>
-      </div>
     </div>
   </main>
 </template>
 
 <script setup>
-const form = reactive({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-})
+  const form = reactive({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-const submitForm = () => {
-  // TODO: Implement form submission
-  console.log('Form submitted:', form)
-}
+  const submitForm = () => {
+    // TODO: Implement form submission
+    console.log('Form submitted:', form);
+  };
 </script>

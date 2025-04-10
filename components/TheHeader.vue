@@ -272,6 +272,6 @@
   const menuItems = [
     { label: 'Collection', path: '/collections' },
     { label: 'À propos', path: '/about' },
-    { label: 'Contact', path: '/contact' },
+    // { label: 'Contact', path: '/contact' },
   ];
 </script>
