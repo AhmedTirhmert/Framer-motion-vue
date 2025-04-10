@@ -45,7 +45,7 @@
       { property: 'og:url', content: 'https://framer-nuxt.vercel.app/' },
       {
         property: 'og:image',
-        content: 'https://framer-nuxt.vercel.app/images/og-3.png',
+        content: 'https://framer-nuxt.vercel.app/social-card.jpg',
       },
 
       // 🟦 Twitter Cards
@@ -57,7 +57,7 @@
       },
       {
         name: 'twitter:image',
-        content: 'https://framer-nuxt.vercel.app/images/og-3.png',
+        content: 'https://framer-nuxt.vercel.app/social-card.jpg',
       },
     ],
     link: [{ rel: 'canonical', href: 'https://framer-nuxt.vercel.app/' }],
