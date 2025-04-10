@@ -92,23 +92,13 @@
             mass: 0.5,
           }"
         >
-          <motion.div
-            class="relative rounded-lg overflow-hidden bg-primary-900"
-            layout
-            :transition="{
-              type: 'spring',
-              stiffness: 100,
-              bounce: 0.5,
-              mass: 0.5,
-              duration: 0.3,
-            }"
-          >
+          <div class="relative rounded-lg overflow-hidden bg-primary-900">
             <NuxtImg
               :src="modalItem.image"
               format="avif"
-              height="800"
-              placeholder
-              class="max-w-full max-h-[80dvh] h-auto w-auto object-cover"
+              height="1200"
+              placeholder="/images/placeholder.png"
+              class="max-w-full max-h-[90dvh] h-auto w-auto object-cover"
             />
             <div
               class="flex justify-between px-2 py-1 items-center modal-content bg-[url('/images/texture3.png')]"
@@ -118,17 +108,10 @@
                 <Icon name="mdi:close" class="w-4 h-4" />
               </button>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>
-    <!-- Floating CTA -->
-    <a
-      href="#contact"
-      class="fixed bottom-4 right-4 z-10 border-primary-700 border-2 bg-walnut-600 text-white p-3 rounded-full shadow-lg bg-primary-800 transition-all duration-300 ease-in-out"
-    >
-      <Icon name="mdi:whatsapp" class="w-6 h-6" />
-    </a>
   </motion.div>
 </template>
 
