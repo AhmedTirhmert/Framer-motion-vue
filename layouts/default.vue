@@ -5,14 +5,14 @@
     <!-- Floating CTA -->
     <AnimatePresence>
       <motion.div
-        v-if="!isScrolling"
-        class="fixed bottom-4 right-4 z-10 flex flex-col gap-2"
-        :initial="{ opacity: 0, scale: 0.5, x: '150%' }"
-        :animate="{ opacity: 1, scale: 1, x: '0%' }"
-        :exit="{ opacity: 0, scale: 0.5, x: '150%' }"
+        class="fixed bottom-4 right-4 z-10 flex flex-col gap-2 origin-bottom-right"
+        :variants="{
+          shrinked: { scale: 0.7, x: 10 },
+          expanded: { scale: 1, x: 0 },
+        }"
+        :animate="isScrolling ? 'shrinked' : 'expanded'"
         :transition="{
-          duration: 0.4,
-          delay: 0.3,
+          duration: 0.3,
           ease: 'easeInOut',
           type: 'tween',
         }"
@@ -24,7 +24,7 @@
           class="bg-primary-50 text-primary-800 p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out ring-primary-100 ring-[0.2px] ring-inset"
           :initial="{ opacity: 0, scale: 0.5, x: '150%' }"
           :animate="{ opacity: 1, scale: 1, x: '0%' }"
-          :exit="{ opacity: 0, scale: 0.5, x: '150%' }"
+          :exit="{ opacity: 1, scale: 0.5, x: '150%' }"
           :transition="{
             duration: 0.4,
             delay:
