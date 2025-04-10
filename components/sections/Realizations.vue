@@ -100,7 +100,7 @@
       <div class="flex justify-center mt-10">
         <NuxtLink
           to="/collections"
-          class="px-5 py-3 rounded-full border-2 border-primary-700 uppercase tracking-wide transition duration-300 ease-in-out text-white hover:bg-primary-700/50 touch-none font-semibold"
+          class="px-5 py-3 rounded-full border-2 border-primary-700 tracking-wide transition duration-300 ease-in-out text-white hover:bg-primary-700/50 touch-none font-semibold"
         >
           Voir toutes nos réalisations
         </NuxtLink>

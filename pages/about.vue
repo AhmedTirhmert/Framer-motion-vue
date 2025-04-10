@@ -176,12 +176,12 @@
       </p>
 
       <NuxtLink to="/contact">
-        <CTA>
+        <CTA bg-class="bg-primary-700">
           <template #content> Demandez votre devis gratuit </template>
         </CTA>
       </NuxtLink>
     </motion.section>
-<!--
+    <!--
     <img
       src="/images/logo.png"
       alt="Logo"

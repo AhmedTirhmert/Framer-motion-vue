@@ -30,9 +30,9 @@
         <motion.div :variants="heroItem">
           <button
             @click="scrollToSection('realizations')"
-            class="inline-flex items-center px-6 py-3 text-sm bg-primary-100 text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
+            class="inline-flex items-center px-6 py-3 text-sm bg-primary-50 text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
           >
-            Voir nos réalisations
+            Découvrir nos réalisations
             <Icon
               name="material-symbols:arrow-forward"
               size="20"
