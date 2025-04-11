@@ -1,7 +1,8 @@
 import Lenis from 'lenis';
 import type { ScrollToOptions } from 'lenis';
 import { ref, onMounted, onUnmounted } from 'vue';
-
+const isScrolling = ref(false);
+const isTop = ref(true);
 export function useLenis() {
   const lenis = ref<Lenis | null>(null);
 
@@ -18,12 +19,23 @@ export function useLenis() {
     };
 
     requestAnimationFrame(animate);
+    window.addEventListener('scroll', handleScroll, { passive: true });
   });
 
   onUnmounted(() => {
     lenis.value?.destroy();
     lenis.value = null;
+    window.removeEventListener('scroll', handleScroll);
   });
+
+  const handleScroll = () => {
+    isScrolling.value = true;
+    isTop.value = document.documentElement.scrollTop === 0;
+    clearTimeout((window as any).scrollTimeout);
+    (window as any).scrollTimeout = setTimeout(() => {
+      isScrolling.value = false;
+    }, 100);
+  };
 
   const scrollTo = (
     target: string | HTMLElement,
@@ -36,5 +48,11 @@ export function useLenis() {
     scrollTo(0, options);
   };
 
-  return { lenis, scrollTo, scrollToTop };
+  return {
+    lenis,
+    scrollTo,
+    scrollToTop,
+    isScrolling,
+    isTop,
+  };
 }

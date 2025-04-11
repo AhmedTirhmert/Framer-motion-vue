@@ -1,5 +1,8 @@
 <template>
-  <main class="bg-white dark:bg-primary-900 transition-colors duration-300">
+  <main
+    ref="app"
+    class="bg-white dark:bg-primary-900 transition-colors duration-300"
+  >
     <!-- Floating CTA -->
     <AnimatePresence>
       <motion.div
@@ -68,24 +71,10 @@
 
 <script setup lang="ts">
   import { motion } from 'motion-v';
+  const appRef = useTemplateRef('app');
+  provide('appRef', appRef);
 
-  const isScrolling = ref(false);
-
-  const handleScroll = () => {
-    isScrolling.value = true;
-    clearTimeout(window.scrollTimeout);
-    window.scrollTimeout = setTimeout(() => {
-      isScrolling.value = false;
-    }, 100);
-  };
-
-  onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
-  });
-
-  onBeforeUnmount(() => {
-    window.removeEventListener('scroll', handleScroll);
-  });
+  const { isScrolling } = useLenis();
 
   const socialLinks = [
     {

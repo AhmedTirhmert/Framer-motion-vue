@@ -1,5 +1,5 @@
 <template>
-  <section class="relative h-[100svh]">
+  <section id="hero" class="relative h-[100svh]">
     <div class="absolute inset-0 h-full max-w-screen overflow-hidden">
       <Carousel :slides="heroImages" />
       <div class="absolute inset-0 bg-black/60"></div>

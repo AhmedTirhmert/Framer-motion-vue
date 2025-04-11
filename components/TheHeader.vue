@@ -1,6 +1,5 @@
 <template>
   <motion.header
-    layout
     :initial="{
       y: '-150%',
       filter: 'blur(10px)',
@@ -12,10 +11,14 @@
     :transition="{
       ease: 'easeInOut',
       type: 'tween',
-      duration: 0.4,
-      delay: 0.3,
+      duration: 0.3,
     }"
-    class="fixed w-full bg-white/70 dark:bg-primary-800/70 backdrop-blur-lg z-50 h-16"
+    class="fixed w-full z-50 h-16 transition-all duration-300 ease-in-out"
+    :class="[
+      isTop
+        ? 'bg-transparent backdrop-blur-sm'
+        : 'bg-primary-800/70 backdrop-blur-lg',
+    ]"
   >
     <nav
       class="container mx-auto px-4 h-full flex items-center justify-between"
@@ -32,7 +35,7 @@
               x: ['100%', 0],
             }"
             :transition="{
-              delay: 0.7,
+              delay: 0.4,
               duration: 1,
               type: 'tween',
               ease: [0.22, 1, 0.36, 1],
@@ -60,7 +63,7 @@
               filter: ['blur(5px)', 'blur(0px)'],
             }"
             :transition="{
-              delay: 0.7,
+              delay: 0.3,
               duration: 1,
               type: 'tween',
               ease: [0.22, 1, 0.36, 1],
@@ -76,7 +79,7 @@
               filter: ['blur(5px)', 'blur(0px)'],
             }"
             :transition="{
-              delay: 0.7,
+              delay: 0.3,
               duration: 1,
               type: 'tween',
               ease: [0.22, 1, 0.36, 1],
@@ -99,12 +102,6 @@
       </div>
 
       <div class="flex items-center space-x-4 md:hidden">
-        <!-- <button @click="toggleColorMode" class="p-2">
-          <Icon
-            :name="colorMode.value === 'dark' ? 'ph:sun' : 'ph:moon'"
-            class="w-5 h-5"
-          />
-        </button> -->
         <button class="md:hidden" @click="isMenuOpen = !isMenuOpen">
           <motion.svg
             :animate="isMenuOpen ? 'open' : 'closed'"
@@ -240,13 +237,9 @@
 
 <script setup>
   import { motion } from 'motion-v';
-  const colorMode = useColorMode();
+  const { isTop } = useLenis();
   const isMenuOpen = ref(false);
-
-  const toggleColorMode = () => {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
-  };
-
+  // const appRef = inject('appRef');
   watch(isMenuOpen, (open) => {
     if (process.client) {
       document.documentElement.style.overflow = open ? 'hidden' : '';
