@@ -5,7 +5,7 @@
     :animate="{ filter: 'blur(0px)', scale: 1 }"
     :transition="{
       ease: 'easeInOut',
-      duration: 0.6,
+      duration: 0.3,
       type: 'tween',
     }"
   >
@@ -52,7 +52,7 @@
 
   const props = withDefaults(defineProps<Props>(), {
     autoplay: true,
-    delay: 6000,
+    delay: 4000,
   });
 
   const currentIndex = ref(0);

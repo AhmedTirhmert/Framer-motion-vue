@@ -64,7 +64,7 @@
   });
 </script>
 <template>
-  <div
+  <!-- <div
     id="preloader"
     class="fixed inset-0 z-[9999] bg-brand-black bg-primary-900 text-white flex items-center justify-center"
   >
@@ -73,7 +73,7 @@
       alt=""
       class="size-24 animate-pulse-logo"
     />
-  </div>
+  </div> -->
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -95,7 +95,7 @@
     animation: pulse-logo 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   /* Optional: hide scrollbar while loading */
-  body {
+  /* body {
     overflow: hidden;
-  }
+  } */
 </style>

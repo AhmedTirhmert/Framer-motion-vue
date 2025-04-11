@@ -65,8 +65,8 @@
     visible: {
       transition: {
         type: 'tween',
-        delayChildren: 0.3,
         staggerChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
     hidden: {},
@@ -85,9 +85,12 @@
       filter: 'blur(0px)',
       visibility: 'visible',
       transition: {
-        duration: 0.1 * index + 0.3,
+        duration: 0.2 * index + 0.3,
         delay: 0.1 * index,
-        type: 'tween',
+        type: 'spring',
+        bounce: 0.4,
+        damping: 10,
+        stiffness: 100,
         ease: 'easeInOut',
       },
     }),

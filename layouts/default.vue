@@ -18,12 +18,12 @@
           v-for="(link, index) in socialLinks"
           :key="index"
           style="perspective: 100px; transform-style: preserve-3d"
-          class="bg-primary-50 origin-bottom-right text-primary-800 p-2 rounded-full shadow-lg ring-primary-100 ring-[0.2px] ring-inset"
+          class="bg-primary-50 origin-bottom-right text-primary-800 px-1.5 py-1 md:p-2 rounded-full rounded-br-none shadow-lg ring-primary-100 ring-[0.2px] ring-inset"
           :initial="{ opacity: 0, scale: 0.5, x: '100%' }"
           :variants="{
             shrinked: {
               opacity: 1,
-              scale: 0.5,
+              scale: 0.7,
               x: '0%',
               y: (socialLinks.length - 1 - index) * 40,
               transition: {
@@ -51,8 +51,9 @@
             target="_blank"
             external
             rel="noopener noreferrer"
+            class="h-fit w-fit"
           >
-            <Icon :name="link.icon" size="25" />
+            <Icon :name="link.icon" class="size-[20px] mb-0.5 md:size-[25px]" />
           </NuxtLink>
         </motion.div>
       </motion.div>
