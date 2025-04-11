@@ -88,6 +88,7 @@
               format="avif"
               width="500"
               height="300"
+              loading="lazy"
               :alt="`Realization ${index + 1}`"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
