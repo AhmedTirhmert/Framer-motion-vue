@@ -4,18 +4,14 @@
     const preloader = document.getElementById('preloader');
 
     if (preloader) {
-      // Fade out preloader
       preloader.classList.add(
         'opacity-0',
         'transition-opacity',
         'duration-700',
       );
 
-      // Remove it from DOM after fade
       setTimeout(() => preloader.remove(), 500);
       setTimeout(() => (document.body.style.overflow = 'auto'), 550);
-
-      // Re-enable scroll (if previously disabled via CSS)
     }
   });
   useHead({
@@ -68,8 +64,11 @@
     id="preloader"
     class="fixed inset-0 z-[9999] bg-brand-black bg-primary-900 text-white flex items-center justify-center"
   >
-    <img
+    <NuxtImg
       src="/images/logo-light.png"
+      format="webp"
+      width="80"
+      height="80"
       alt=""
       class="size-24 animate-pulse-logo"
     />
