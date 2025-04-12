@@ -23,10 +23,10 @@ export const resolveItemTransition = (
 };
 
 export const heroImages = [
-  '/images/HeroImage1.png',
-  '/images/HeroImage2.png',
-  '/images/HeroImage3.png',
-  '/images/HeroImage4.png',
+  '/images/HeroImage1.avif',
+  '/images/HeroImage2.avif',
+  '/images/HeroImage3.avif',
+  '/images/HeroImage4.avif',
 ];
 
 export const expertiseItems = [

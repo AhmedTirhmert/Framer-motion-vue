@@ -25,10 +25,9 @@
           :style="{ backgroundImage: `url(${slide})` }"
         /> -->
 
-        <NuxtImg
+        <img
           :src="slide"
           class="w-full h-full object-cover"
-          format="webp"
           priority
           :preload="index === 0"
           sizes="sm:100vw md:100vw lg:100vw xl:100vw"
