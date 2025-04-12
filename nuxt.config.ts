@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'motion-v/nuxt',
     '@nuxt/image',
-    '@vueuse/motion/nuxt',
   ],
   colorMode: {
     classSuffix: '',
@@ -29,7 +28,13 @@ export default defineNuxtConfig({
     },
   },
   image: {
+    provider: 'ipx',
     domains: ['images.unsplash.com'],
+    screens: {
+      sm: 40,
+      md: 80,
+      lg: 400,
+    },
   },
   css: ['@/assets/css/main.css'],
   nitro: {

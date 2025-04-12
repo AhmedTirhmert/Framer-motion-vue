@@ -81,20 +81,17 @@
             while-in-view="visible"
             initial="hidden"
             :in-view-options="{ once: true }"
-            class="relative h-64 group overflow-hidden rounded-lg hover:cursor-pointer hover:ring-1 transition-all ease-in-out duration-300 ring-primary-300"
+            class="relative h-64 group overflow-hidden rounded-lg hover:cursor-pointer hover:ring-1 ring-primary-300"
           >
             <NuxtImg
               :src="item.image"
               format="avif"
-              width="500"
-              height="300"
+              width="400"
+              height="250"
               loading="lazy"
               :alt="`Realization ${index + 1}`"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div
-              class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
-            ></div>
           </motion.div>
         </div>
       </ClientOnly>

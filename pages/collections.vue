@@ -48,11 +48,12 @@
           <NuxtImg
             :src="item.image"
             alt="photo"
-            height="300"
-            width="500"
-            fromat="webp"
-            loading="eager"
-            class="w-full h-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
+            width="400"
+            height="250"
+            format="avif"
+            loading="lazy"
+            class="w-full h-full aspect-video object-cover group-hover:scale-105"
+            placeholder="/images/placeholder.webp"
           />
         </motion.div>
       </AnimatePresence>
@@ -97,7 +98,7 @@
               :src="modalItem.image"
               format="avif"
               height="1200"
-              placeholder="/images/placeholder.png"
+              placeholder="/images/placeholder.webp"
               class="max-w-full max-h-[90dvh] h-auto w-auto object-cover"
             />
             <div
