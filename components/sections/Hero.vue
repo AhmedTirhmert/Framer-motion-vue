@@ -13,7 +13,7 @@
       >
         <motion.div :variants="heroItem">
           <h1
-            class="font-display font-bold text-3xl md:text-6xl mb-6 text-white"
+            class="font-display font-bold text-3xl md:text-5xl xl:text-6xl mb-6 text-white"
           >
             Transformez vos espaces, créez vos rêves.
           </h1>
