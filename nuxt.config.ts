@@ -2,30 +2,23 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
+  routeRules: {
+    '/about': { prerender: true },
+    '/collections': { prerender: true },
+    '/': { prerender: true },
+  },
   modules: [
-    '@nuxt/content',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
     '@vueuse/nuxt',
     'nuxt-icon',
     'motion-v/nuxt',
     '@nuxt/image',
+    '@nuxtjs/color-mode',
   ],
   colorMode: {
     classSuffix: '',
     preference: 'dark',
     fallback: 'dark',
-  },
-  content: {
-    highlight: {
-      theme: 'github-light',
-    },
-    markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 3,
-      },
-    },
   },
   image: {
     provider: 'ipx',

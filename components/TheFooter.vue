@@ -41,12 +41,17 @@
             ELITEMDF
           </h4>
           <ul
-            class="space-y-2 text-sm text-primary-600 dark:text-primary-100/70"
+            class="flex flex-wrap items-center gap-3 text-sm text-primary-600 dark:text-primary-100/70"
           >
-            <li>cuisine</li>
-            <li>la salle de bain</li>
-            <li>habitat et interieur</li>
-            <li>Dressing</li>
+            <li
+              class="mt-0 w-[calc(100%/3-0.75rem)] capitalize"
+              v-for="(service, index) in categories"
+              :key="index"
+            >
+              <NuxtLink to="/collections">
+                {{ service }}
+              </NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
@@ -60,22 +65,14 @@
         </p>
         <div class="flex justify-center space-x-4 mt-4 lg:ml-auto">
           <a
-            href="#"
+            v-for="(link, index) in socialLinks.reverse()"
+            :key="index"
+            :href="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
             class="text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-white"
           >
-            <Icon name="mdi:facebook" size="2em" />
-          </a>
-          <a
-            href="#"
-            class="text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-white"
-          >
-            <Icon name="mdi:whatsapp" size="2em" />
-          </a>
-          <a
-            href="#"
-            class="text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-white"
-          >
-            <Icon name="mdi:instagram" size="2em" />
+            <Icon :name="link.icon" size="2em" />
           </a>
         </div>
       </div>
@@ -84,13 +81,17 @@
 </template>
 
 <script setup>
-  // No additional script logic is required for this footer
+  import { socialLinks, collection } from '~/constants/content';
+
+  const categories = computed(
+    () => new Set(collection.map((item) => item.category)),
+  );
 </script>
 
 <style lang="scss" scoped>
   footer {
-    background-blend-mode: screen;
-    -moz-background-blend-mode: screen;
+    background-blend-mode: luminosity;
+    -moz-background-blend-mode: luminosity;
   }
   /* Tailwind handles responsiveness, no additional styles needed */
 </style>

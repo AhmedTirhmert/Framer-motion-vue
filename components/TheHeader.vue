@@ -15,8 +15,8 @@
     }"
     class="fixed w-full z-50 h-16 transition-all duration-300 ease-in-out"
     :class="[
-      isTop
-        ? 'bg-transparent backdrop-blur-sm'
+      isTop && !isMenuOpen
+        ? 'bg-transparent '
         : 'bg-primary-800/70 backdrop-blur-lg',
     ]"
   >
@@ -208,9 +208,11 @@
 
             <div class="flex justify-end space-x-4">
               <motion.a
-                v-for="(social, index) in socials"
+                v-for="(social, index) in selectedSocialLinks"
                 :key="social.name"
-                :href="social.link"
+                :href="social.url"
+                target="_blank"
+                rel="noopener noreferrer"
                 :initial="{ opacity: 0, y: 20 }"
                 :animate="{ opacity: 1, y: 0 }"
                 :exit="{ opacity: 0, y: 20 }"
@@ -237,6 +239,7 @@
 
 <script setup>
   import { motion } from 'motion-v';
+  import { socialLinks } from '~/constants/content';
   const { isTop } = useLenis();
   const isMenuOpen = ref(false);
   // const appRef = inject('appRef');
@@ -245,23 +248,13 @@
       document.documentElement.style.overflow = open ? 'hidden' : '';
     }
   });
-  const socials = [
-    {
-      name: 'Facebook',
-      link: 'https://facebook.com',
-      icon: 'mdi:facebook',
-    },
-    {
-      name: 'Twitter',
-      link: 'https://twitter.com',
-      icon: 'mdi:whatsapp',
-    },
-    {
-      name: 'Instagram',
-      link: 'https://instagram.com',
-      icon: 'mdi:instagram',
-    },
-  ];
+  const selectedSocials = ref(['facebook', 'instagram']);
+  const selectedSocialLinks = computed(() => {
+    return socialLinks.filter((social) =>
+      selectedSocials.value.includes(social.name),
+    );
+  });
+
   const menuItems = [
     { label: 'Collection', path: '/collections' },
     { label: 'À propos', path: '/about' },

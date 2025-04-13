@@ -1,8 +1,5 @@
 <template>
-  <main
-    ref="app"
-    class="bg-white dark:bg-primary-900 transition-colors duration-300"
-  >
+  <main class="bg-white dark:bg-primary-900 transition-colors duration-300">
     <!-- Floating CTA -->
     <AnimatePresence>
       <motion.div
@@ -71,27 +68,7 @@
 
 <script setup lang="ts">
   import { motion } from 'motion-v';
-  const appRef = useTemplateRef('app');
-  provide('appRef', appRef);
+  import { socialLinks } from '~/constants/content';
 
   const { isScrolling } = useLenis();
-
-  const socialLinks = [
-    {
-      icon: 'mdi:facebook',
-      url: 'https://www.facebook.com/elitemdf',
-    },
-    {
-      icon: 'mdi:instagram',
-      url: 'https://www.instagram.com/elite_mdf1',
-    },
-    {
-      icon: 'mdi:whatsapp',
-      url: "https://wa.me/212661519950?text=Bonjour%20ELITE%20MDF%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20mobilier%20sur%20mesure.%20Pouvez-vous%20me%20fournir%20plus%20d'informations%20s'il%20vous%20pla%C3%AEt%20%3F",
-    },
-    {
-      icon: 'mdi:phone',
-      url: 'tel:+212661519950',
-    },
-  ];
 </script>

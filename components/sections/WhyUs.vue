@@ -71,9 +71,7 @@
         </ClientOnly>
       </div>
       <div class="w-full flex items-center justify-center mt-10">
-        <CTA class="">
-          <template #content>Obtenez une estimation</template>
-        </CTA>
+        <CTA class=""> Obtenez une estimation </CTA>
       </div>
     </div>
   </section>

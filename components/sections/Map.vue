@@ -17,9 +17,10 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             class="absolute inset-0 w-full h-full rounded-lg"
+            @load="mapLoaded = true"
           ></iframe>
           <motion.div
-            v-else
+            v-if="!mapLoaded"
             class="text-center text-primary-300 flex items-center justify-center"
           >
             <p>Chargement de la carte...</p>
@@ -35,6 +36,7 @@
   import { AnimatePresence, motion } from 'motion-v';
 
   const isVisible = shallowRef(false);
+  const mapLoaded = shallowRef(false);
   const target = useTemplateRef('target');
 
   useIntersectionObserver(target, ([entry], observerElement) => {

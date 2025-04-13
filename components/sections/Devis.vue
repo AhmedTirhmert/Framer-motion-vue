@@ -55,9 +55,7 @@
         étape.
       </motion.p>
       <NuxtLink to="/contact">
-        <CTA>
-          <template #content> Demandez votre devis gratuit </template>
-        </CTA>
+        <CTA> Demandez votre devis gratuit </CTA>
       </NuxtLink>
     </motion.div>
   </section>

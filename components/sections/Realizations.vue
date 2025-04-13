@@ -54,53 +54,50 @@
           espaces nuit apaisants, nous donnons vie au raffinement.
         </motion.p>
       </div>
-      <ClientOnly>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <motion.div
-            v-for="(item, index) in visibleCollection"
-            :key="`real_${index}`"
-            :variants="{
-              visible: {
-                opacity: 1,
-                scale: 1,
-                filter: 'blur(0px)',
-              },
-              hidden: {
-                opacity: 0,
-                filter: 'blur(5px)',
-              },
-            }"
-            :transition="{
-              duration: 0.6,
-              delay: 0.2 * index,
-              type: 'tween',
-              stiffness: 100,
-              damping: 20,
-              ease: 'linear',
-            }"
-            while-in-view="visible"
-            initial="hidden"
-            :in-view-options="{ once: true }"
-            class="relative h-64 group overflow-hidden rounded-lg hover:cursor-pointer hover:ring-1 ring-primary-300"
-          >
-            <NuxtImg
-              :src="item.image"
-              format="avif"
-              width="400"
-              height="250"
-              loading="lazy"
-              :alt="`Realization ${index + 1}`"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-          </motion.div>
-        </div>
-      </ClientOnly>
-      <div class="flex justify-center mt-10">
-        <NuxtLink
-          to="/collections"
-          class="px-5 py-3 rounded-full border-2 border-primary-700 tracking-wide transition duration-300 ease-in-out text-white hover:bg-primary-700/50 touch-none font-semibold"
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <motion.div
+          v-for="(item, index) in visibleCollection"
+          :key="`real_${index}`"
+          :variants="{
+            visible: {
+              opacity: 1,
+              scale: 1,
+              filter: 'blur(0px)',
+            },
+            hidden: {
+              opacity: 0,
+              filter: 'blur(5px)',
+            },
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: 0.2 * index,
+            type: 'tween',
+            stiffness: 100,
+            damping: 20,
+            ease: 'linear',
+          }"
+          while-in-view="visible"
+          initial="hidden"
+          :in-view-options="{ once: true }"
+          class="relative h-64 group overflow-hidden rounded-lg"
         >
-          Voir toutes nos réalisations
+          <NuxtImg
+            :src="item.image"
+            format="avif"
+            width="400"
+            height="250"
+            loading="lazy"
+            :alt="`Realization ${index + 1}`"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            placeholder="/images/placeholder.webp"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw, 20vw"
+          />
+        </motion.div>
+      </div>
+      <div class="flex justify-center mt-10">
+        <NuxtLink to="/collections">
+          <CTA> Voir toutes nos réalisations </CTA>
         </NuxtLink>
       </div>
     </div>

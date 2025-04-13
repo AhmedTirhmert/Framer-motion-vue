@@ -176,9 +176,7 @@
       </p>
 
       <NuxtLink to="/contact">
-        <CTA bg-class="bg-primary-700">
-          <template #content> Demandez votre devis gratuit </template>
-        </CTA>
+        <CTA bg-class="bg-primary-700"> Demandez votre devis gratuit </CTA>
       </NuxtLink>
     </motion.section>
     <!--

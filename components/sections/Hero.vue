@@ -2,7 +2,6 @@
   <section id="hero" class="relative h-[100svh]">
     <div class="absolute inset-0 h-full max-w-screen overflow-hidden">
       <Carousel :slides="heroImages" />
-      <div class="absolute inset-0 bg-black/60"></div>
     </div>
 
     <div class="relative container mx-auto h-full flex items-center">
@@ -27,17 +26,24 @@
             savoir-faire.
           </p>
         </motion.div>
-        <motion.div :variants="heroItem">
+        <motion.div
+          class="flex flex-col md:flex-row-reverse items-center gap-4 justify-center xl:justify-start"
+          :variants="heroItem"
+        >
+          <CTA
+            bg-class="font-sans text-base font-semibold"
+            class="!mt-0 block max-lg:w-2/3"
+          >
+            Demandez Devis
+            <div
+              class="absolute inset-0 bg-primary-900/50 rounded-full -z-10"
+            />
+          </CTA>
           <button
             @click="scrollToSection('realizations')"
-            class="inline-flex items-center px-6 py-3 text-sm bg-primary-50 text-primary-900 font-semibold rounded-full hover:bg-primary-100 transition-colors group"
+            class="px-10 py-3 font-sans text-base font-semibold capitalize block max-lg:w-2/3 items-center h-full bg-primary-50 text-primary-900 rounded-full hover:bg-primary-100 transition-colors"
           >
-            Découvrir nos réalisations
-            <Icon
-              name="material-symbols:arrow-forward"
-              size="20"
-              class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
-            />
+            nos réalisations
           </button>
         </motion.div>
       </motion.div>

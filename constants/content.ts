@@ -164,3 +164,26 @@ export const sections = [
     title: 'Nos Réalisations',
   },
 ];
+
+export const socialLinks = [
+  {
+    name: 'facebook',
+    icon: 'mdi:facebook',
+    url: 'https://www.facebook.com/elitemdf',
+  },
+  {
+    name: 'instagram',
+    icon: 'mdi:instagram',
+    url: 'https://www.instagram.com/elite_mdf1',
+  },
+  {
+    name: 'whatsapp',
+    icon: 'mdi:whatsapp',
+    url: "https://wa.me/212661519950?text=Bonjour%20ELITE%20MDF%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20mobilier%20sur%20mesure.%20Pouvez-vous%20me%20fournir%20plus%20d'informations%20s'il%20vous%20pla%C3%AEt%20%3F",
+  },
+  {
+    name: 'phone',
+    icon: 'mdi:phone',
+    url: 'tel:+212661519950',
+  },
+];

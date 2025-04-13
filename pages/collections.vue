@@ -93,7 +93,10 @@
             mass: 0.5,
           }"
         >
-          <div class="relative rounded-lg overflow-hidden bg-primary-900">
+          <div
+            @click.stop=""
+            class="relative rounded-lg overflow-hidden bg-primary-900"
+          >
             <NuxtImg
               :src="modalItem.image"
               format="avif"
@@ -102,7 +105,7 @@
               class="max-w-full max-h-[90dvh] h-auto w-auto object-cover"
             />
             <div
-              class="flex justify-between px-2 py-1 items-center modal-content bg-[url('/images/texture3.png')]"
+              class="flex justify-between px-2 py-1 items-center modal-content"
             >
               <h2 class="font-semibold">{{ modalItem.title }}</h2>
               <button @click="modalItem = null" class="text-white text-2xl">
@@ -139,7 +142,7 @@
 
 <style lang="scss" scoped>
   .modal-content {
-    background-blend-mode: luminosity;
-    -moz-background-blend-mode: luminosity;
+    background-blend-mode: soft-light;
+    -moz-background-blend-mode: soft-light;
   }
 </style>
