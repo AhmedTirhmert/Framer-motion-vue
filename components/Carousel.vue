@@ -1,14 +1,11 @@
 <template>
-  <motion.div
+  <div
     class="relative w-screen h-[100svh] overflow-hidden will-change-transform"
-    :initial="{ opacity: 0, scale: 1.05 }"
-    :animate="{ opacity: 1, scale: 1 }"
-    :transition="{ ease: 'easeInOut', duration: 0.4, type: 'tween' }"
   >
     <motion.div
       class="flex w-full h-full"
       :animate="{ x: `-${currentIndex * 100}vw` }"
-      :transition="{ duration: 1, ease: 'easeInOut', type: 'tween' }"
+      :transition="{ duration: 2.5, ease: 'easeInOut', type: 'tween' }"
     >
       <div
         v-for="(slide, index) in props.slides"
@@ -16,15 +13,17 @@
         class="w-screen relative h-screen flex-shrink-0"
       >
         <div class="absolute inset-0 bg-black/60" />
-        <img
+        <NuxtImg
           :src="slide"
+          format="avif"
+          sizes="sm:100vw md:100vw lg:100vw"
           class="w-full h-full object-cover"
           :loading="index === 0 ? 'eager' : 'lazy'"
           :alt="`Slide ${index + 1}`"
         />
       </div>
     </motion.div>
-  </motion.div>
+  </div>
 </template>
 
 <script lang="ts" setup>

@@ -13,9 +13,11 @@
       type: 'tween',
       duration: 0.3,
     }"
-    class="fixed w-full z-50 h-16 transition-all duration-300 ease-in-out"
+    class="fixed w-full z-50 h-16 transition-all duration-400 ease-in-out"
     :class="[
-      isTop && !isMenuOpen
+      isMenuOpen
+        ? 'bg-primary-900'
+        : isTop
         ? 'bg-transparent '
         : 'bg-primary-800/70 backdrop-blur-lg',
     ]"
@@ -148,7 +150,7 @@
     <AnimatePresence>
       <motion.div
         v-if="isMenuOpen"
-        class="md:hidden absolute top-full h-[calc(100dvh-4rem)] left-0 right-0 translate-x-full bg-white dark:bg-primary-900 border-t border-primary-200 dark:border-primary-800"
+        class="md:hidden absolute top-full h-[calc(100dvh-4rem)] left-0 right-0 translate-x-full border-t border-primary-800 bg-white dark:bg-primary-900 dark:border-primary-800"
         layout
         :initial="{ opacity: 0, filter: 'blur(10px)' }"
         :animate="{ opacity: 1, filter: 'blur(0px)', translateX: 0 }"

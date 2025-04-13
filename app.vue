@@ -9,7 +9,6 @@
         'transition-opacity',
         'duration-700',
       );
-
       setTimeout(() => preloader.remove(), 500);
       setTimeout(() => (document.body.style.overflow = 'auto'), 550);
     }
@@ -62,7 +61,7 @@
 <template>
   <div
     id="preloader"
-    class="fixed inset-0 z-[9999] bg-brand-black bg-primary-900 text-white flex items-center justify-center"
+    class="fixed flex flex-col gap-4 inset-0 z-[9999] bg-brand-black bg-primary-900 text-primary-200 items-center justify-center"
   >
     <NuxtImg
       src="/images/logo-light.png"
@@ -72,6 +71,9 @@
       alt=""
       class="size-24 animate-pulse-logo"
     />
+    <h2 class="text-center font-display text-3xl font-semibold reveal">
+      Elite MDF
+    </h2>
   </div>
   <NuxtLayout>
     <NuxtPage />
@@ -88,6 +90,24 @@
     100% {
       transform: scale(1);
     }
+  }
+
+  @keyframes reveal {
+    0% {
+      -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+      clip-path: polygon(0 0, 0 0, 0 0);
+      transition: all 0.8s cubic-bezier(0.55, 0.06, 0.33, 1.85);
+      transform: skew(30deg);
+    }
+    100% {
+      -webkit-clip-path: polygon(0 0, 200% 0, 0 200%);
+      clip-path: polygon(0 0, 200% 0, 0 200%);
+      transform: skew(0);
+    }
+  }
+
+  .reveal {
+    animation: reveal 1s cubic-bezier(0.4, 0, 0.6, 1) forwards;
   }
 
   .animate-pulse-logo {
