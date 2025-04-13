@@ -52,6 +52,7 @@
             external
             rel="noopener noreferrer"
             class="h-fit w-fit"
+            :aria-label="link.name"
           >
             <Icon :name="link.icon" class="size-[20px] mb-0.5 md:size-[25px]" />
           </NuxtLink>

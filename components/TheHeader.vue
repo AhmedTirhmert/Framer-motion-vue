@@ -104,7 +104,11 @@
       </div>
 
       <div class="flex items-center space-x-4 md:hidden">
-        <button class="md:hidden" @click="isMenuOpen = !isMenuOpen">
+        <button
+          aria-label="Toggle menu"
+          class="md:hidden"
+          @click="isMenuOpen = !isMenuOpen"
+        >
           <motion.svg
             :animate="isMenuOpen ? 'open' : 'closed'"
             width="30"

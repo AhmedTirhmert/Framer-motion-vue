@@ -69,6 +69,7 @@
             :key="index"
             :href="link.url"
             target="_blank"
+            :aria-label="link.name"
             rel="noopener noreferrer"
             class="text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-white"
           >
