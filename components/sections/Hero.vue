@@ -27,9 +27,15 @@
           </p>
         </motion.div>
         <motion.div
-          class="flex flex-col md:flex-row-reverse items-center gap-4 justify-center xl:justify-start"
+          class="flex flex-col-reverse md:flex-row items-center gap-4 justify-center xl:justify-start"
           :variants="heroItem"
         >
+          <button
+            @click="scrollToSection('realizations')"
+            class="px-10 py-3 font-sans text-base font-semibold capitalize block max-lg:w-2/3 items-center h-full bg-primary-50 text-primary-900 rounded-full hover:bg-primary-100 transition-colors"
+          >
+            nos réalisations
+          </button>
           <CTA
             bg-class="font-sans text-base font-semibold"
             class="!mt-0 block max-lg:w-2/3"
@@ -39,12 +45,6 @@
               class="absolute inset-0 bg-primary-900/50 rounded-full -z-10"
             />
           </CTA>
-          <button
-            @click="scrollToSection('realizations')"
-            class="px-10 py-3 font-sans text-base font-semibold capitalize block max-lg:w-2/3 items-center h-full bg-primary-50 text-primary-900 rounded-full hover:bg-primary-100 transition-colors"
-          >
-            nos réalisations
-          </button>
         </motion.div>
       </motion.div>
     </div>
