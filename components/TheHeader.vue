@@ -44,7 +44,7 @@
             }"
           >
             <NuxtImg
-              src="/images/logo-light.png"
+              src="/images/logo-light.webp"
               alt="Logo"
               class=""
               width="40"
@@ -72,7 +72,7 @@
             }"
             class="leading-none font-semibold tracking-wider text-lg"
           >
-            Elite
+            Acme
           </motion.h2>
           <motion.h2
             :animate="{

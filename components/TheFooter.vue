@@ -9,12 +9,10 @@
       >
         <!-- Company Info -->
         <div>
-          <h3 class="font-display text-primary-100 text-xl mb-4">
-            STE ELITE MDF
-          </h3>
+          <h3 class="font-display text-primary-100 text-xl mb-4">ACME MDF</h3>
           <p class="text-sm text-primary-600 dark:text-primary-100/70">
             La plupart des idées pour l'habitat démarrent par d'innombrables
-            pensées versatiles et rêves lointains. Chez ELITEMDF, nous ferons de
+            pensées versatiles et rêves lointains. Chez ACMEMDF, nous ferons de
             notre mieux pour vous aider à organiser vos idées et réaliser
             l'habitat de vos rêves.
           </p>
@@ -28,17 +26,17 @@
           <ul
             class="space-y-2 text-sm text-primary-600 dark:text-primary-100/70"
           >
-            <li>05 28 26 36 86</li>
-            <li>06 61 51 99 50</li>
-            <li>ELITEMDFsarl@gmail.com</li>
-            <li>localisation</li>
+            <li>0x xx xx xx xx</li>
+            <li>0x xx xx xx xx</li>
+            <li>contact@acmemdf.com</li>
+            <li>123 Rue des Exemples, 75000 Paris</li>
           </ul>
         </div>
 
         <!-- Services -->
         <div>
           <h4 class="font-semibold font-display text-primary-100 mb-4">
-            ELITEMDF
+            ACMEMDF
           </h4>
           <ul
             class="flex flex-wrap items-center gap-3 text-sm text-primary-600 dark:text-primary-100/70"
@@ -61,7 +59,7 @@
         class="grid grid-cols-1 lg:grid-cols-2 items-center mt-12 pt-8 border-t border-primary-200 dark:border-primary-700 text-center text-sm text-primary-600 dark:text-primary-100"
       >
         <p class="lg:text-start">
-          &copy; {{ new Date().getFullYear() }} Copyright: ELITEMDF.com
+          &copy; {{ new Date().getFullYear() }} Copyright: ACMEMDF.com
         </p>
         <div class="flex justify-center space-x-4 mt-4 lg:ml-auto">
           <a

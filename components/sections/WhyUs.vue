@@ -29,9 +29,9 @@
           class="text-sm md:text-base text-primary-600 dark:text-primary-100"
         >
           Nous sommes spécialisés dans la conception, la fabrication et la pose
-          de cuisines, salles de bain, placards et dressings. Actifs à Agadir et
-          dans la région SOUSS MASSA, nous répondons à toutes vos demandes
-          d'aménagement avec qualité, rapidité et personnalisation.
+          de cuisines, salles de bain, placards et dressings. Actifs à
+          {Lacation} et dans la région SOUSS MASSA, nous répondons à toutes vos
+          demandes d'aménagement avec qualité, rapidité et personnalisation.
         </motion.p>
       </motion.div>
 

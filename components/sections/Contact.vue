@@ -11,7 +11,7 @@
         <motion.div class="space-y-4">
           <p class="text-primary-600 dark:text-primary-100">
             <Icon name="mdi:email" size="24" class="mr-2 inline-block" />
-            ELITEMDF@gmail.com
+            ACMEMDF@gmail.com
           </p>
           <p class="text-primary-600 dark:text-primary-100">
             <Icon name="mdi:phone" size="24" class="mr-2 inline-block" />

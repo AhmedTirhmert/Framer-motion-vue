@@ -13,10 +13,12 @@
     <motion.div
       class="absolute inset-0 rounded-full border-2 border-primary-200"
       :animate="{
-        boxShadow: ['0 0 5px #F5D0A4', '0 0 10px #F5D0A4', '0 0 5px #F5D0A4'],
+        boxShadow: ['0 0 5px #F5D0A4', '0 0 15px #f8debf', '0 0 0px #F5D0A4'],
+        borderColor: ['#F5D0A4', '#f8debf', '#F5D0A4'],
       }"
       :transition="{
-        duration: 2,
+        duration: 3,
+        repeatDelay: 5,
         repeat: Infinity,
         repeatType: 'loop',
         ease: 'easeInOut',

@@ -23,20 +23,29 @@
           :variants="{
             shrinked: {
               opacity: 1,
-              scale: 0.7,
+              scale: 0.9,
               x: '0%',
-              y: (socialLinks.length - 1 - index) * 40,
+              y: (socialLinks.length - 1 - index) * 30,
               transition: {
                 duration: 0.2,
                 ease: 'easeInOut',
               },
             },
-            expanded: { opacity: 1, scale: 1, x: '0%', y: 0 },
+            expanded: {
+              opacity: 1,
+              scale: 1,
+              x: '0%',
+              y: 0,
+              transition: {
+                duration: 0.4,
+                delay: mounted
+                  ? 0
+                  : (socialLinks.length - index) *
+                    (index == socialLinks.length ? 0.8 : 0.4),
+              },
+            },
           }"
           :animate="isScrolling ? 'shrinked' : 'expanded'"
-          :while-hover="{
-            scale: 1.2,
-          }"
           :transition="{
             duration: 0.4,
             delay:
@@ -70,6 +79,11 @@
 <script setup lang="ts">
   import { motion } from 'motion-v';
   import { socialLinks } from '~/constants/content';
-
+  const mounted = ref(false);
+  onMounted(async () => {
+    setTimeout(() => {
+      mounted.value = true;
+    }, 700);
+  });
   const { isScrolling } = useLenis();
 </script>

@@ -1,5 +1,4 @@
-import { type MotionProps } from 'motion-v';
-
+export const companyName = 'Elite Mdf';
 export const itemsInitialState = {
   y: 40,
   opacity: 0,
@@ -34,13 +33,13 @@ export const expertiseItems = [
     icon: 'fa6-solid:layer-group',
     title: 'Expertise',
     description:
-      "Fort d'une expérience de plus de 10 ans, ELITEMDF c'est créé à une entreprise d'expertise de haute-level dans la conception et la réalisation de cuisines et dressings.",
+      "Fort d'une expérience de plus de 10 ans, ACMEMDF c'est créé à une entreprise d'expertise de haute-level dans la conception et la réalisation de cuisines et dressings.",
   },
   {
     icon: 'ri:contract-line',
     title: 'Engagement',
     description:
-      "  ELITEMDF s'engage à vous offrir un service de qualité et à répondre à toutes vos attentes en termes de design, d'ergonomie et de fonctionnalité.",
+      "  ACMEMDF s'engage à vous offrir un service de qualité et à répondre à toutes vos attentes en termes de design, d'ergonomie et de fonctionnalité.",
   },
   {
     icon: 'mage:goals',
@@ -169,21 +168,21 @@ export const socialLinks = [
   {
     name: 'facebook',
     icon: 'mdi:facebook',
-    url: 'https://www.facebook.com/elitemdf',
+    url: 'https://www.facebook.com/ahmedTirhmert',
   },
   {
     name: 'instagram',
     icon: 'mdi:instagram',
-    url: 'https://www.instagram.com/elite_mdf1',
+    url: 'https://www.instagram.com/artfulassassin',
   },
   {
     name: 'whatsapp',
     icon: 'mdi:whatsapp',
-    url: "https://wa.me/212661519950?text=Bonjour%20ELITE%20MDF%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20mobilier%20sur%20mesure.%20Pouvez-vous%20me%20fournir%20plus%20d'informations%20s'il%20vous%20pla%C3%AEt%20%3F",
+    url: "https://wa.me/212705175794?text=Bonjour%20ELITE%20MDF%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20de%20mobilier%20sur%20mesure.%20Pouvez-vous%20me%20fournir%20plus%20d'informations%20s'il%20vous%20pla%C3%AEt%20%3F",
   },
   {
     name: 'phone',
     icon: 'mdi:phone',
-    url: 'tel:+212661519950',
+    url: 'tel:+212705175794',
   },
 ];

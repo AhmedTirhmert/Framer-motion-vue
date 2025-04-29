@@ -117,7 +117,7 @@
   import { motion, useInView } from 'motion-v';
 
   const paragraph = ref(
-    'Chez ELITEMDF, nous concevons et fabriquons des cuisines, salles de bain et dressings sur mesure pour répondre à vos exigences en matière de qualité et d’esthétique. Chaque projet est réalisé avec un souci du détail et une expertise inégalée pour refléter votre style de vie."',
+    'Chez ACMEMDF, nous concevons et fabriquons des cuisines, salles de bain et dressings sur mesure pour répondre à vos exigences en matière de qualité et d’esthétique. Chaque projet est réalisé avec un souci du détail et une expertise inégalée pour refléter votre style de vie."',
   );
   const paragraphRef = ref();
   const words = computed(() => paragraph.value.split(' '));

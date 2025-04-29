@@ -12,16 +12,16 @@
       <h1
         class="font-display text-4xl md:text-5xl mb-6 text-primary-800 dark:text-primary-100"
       >
-        ELITE MDF
+        ACME MDF
       </h1>
       <p
         class="text-lg text-primary-600 text-balance dark:text-primary-200 max-w-2xl mx-auto"
       >
-        Chez ELITEMDF, nous sommes bien plus que des menuisiers — nous sommes
-        des créateurs d’intérieurs sur mesure. De la conception à la
-        fabrication, jusqu’à la pose complète, nous réalisons des cuisines,
-        salles de bain, placards, dressings et tous types de rangements pour les
-        espaces résidentiels et professionnels.
+        Chez ACMEMDF, nous sommes bien plus que des menuisiers — nous sommes des
+        créateurs d’intérieurs sur mesure. De la conception à la fabrication,
+        jusqu’à la pose complète, nous réalisons des cuisines, salles de bain,
+        placards, dressings et tous types de rangements pour les espaces
+        résidentiels et professionnels.
       </p>
     </motion.section>
 
@@ -37,12 +37,12 @@
       <h2
         class="font-display text-3xl mb-6 text-primary-800 dark:text-primary-100"
       >
-        Une présence forte à Agadir et dans toute la région SOUSS MASSA
+        Une présence forte à {Lacation} et dans toute la région {Region}
       </h2>
       <p
         class="text-primary-600 text-balance dark:text-primary-200 max-w-2xl mx-auto"
       >
-        Basés à Agadir, nous intervenons dans toute la région Souss Massa et
+        Basés à {Lacation}, nous intervenons dans toute la région {Region} et
         étendons notre activité sur l’ensemble du territoire national. Notre
         objectif : répondre à chaque besoin, où que vous soyez, avec la même
         exigence de qualité et d’accompagnement.
@@ -176,7 +176,7 @@
       </p>
 
       <NuxtLink to="/contact">
-        <CTA bg-class="bg-primary-700"> Demandez votre devis gratuit </CTA>
+        <CTA> Demandez votre devis gratuit </CTA>
       </NuxtLink>
     </motion.section>
     <!--

@@ -14,7 +14,7 @@
     }
   });
   useHead({
-    title: 'ELITE MDF - Mobilier Haut de Gamme sur Mesure à Agadir',
+    title: 'ACME MDF - Mobilier Haut de Gamme sur Mesure à {Lacation}',
     htmlAttrs: {
       lang: 'fr',
     },
@@ -22,19 +22,19 @@
       {
         name: 'description',
         content:
-          'Découvrez ELITE MDF, fabricant de mobilier sur mesure à Agadir. Cuisines, dressings, bureaux... conçus avec passion et expertise.',
+          'Découvrez ACME MDF, fabricant de mobilier sur mesure à {Lacation}. Cuisines, dressings, bureaux... conçus avec passion et expertise.',
       },
       {
         name: 'keywords',
         content:
-          'mobilier, sur mesure, Agadir, luxe, design intérieur, cuisines, dressings, ELITE MDF',
+          'mobilier, sur mesure, {Lacation}, luxe, design intérieur, cuisines, dressings, ACME MDF',
       },
-      { name: 'author', content: 'ELITE MDF' },
+      { name: 'author', content: 'ACME MDF' },
       { name: 'robots', content: 'index, follow' },
-      { property: 'og:title', content: 'ELITE MDF - Mobilier Haut de Gamme' },
+      { property: 'og:title', content: 'ACME MDF - Mobilier Haut de Gamme' },
       {
         property: 'og:description',
-        content: 'Mobilier de luxe sur mesure à Agadir.',
+        content: 'Mobilier de luxe sur mesure à {Lacation}.',
       },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://framer-nuxt.vercel.app/' },
@@ -45,10 +45,10 @@
 
       // 🟦 Twitter Cards
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'ELITE MDF - Mobilier Haut de Gamme' },
+      { name: 'twitter:title', content: 'ACME MDF - Mobilier Haut de Gamme' },
       {
         name: 'twitter:description',
-        content: 'Cuisines, dressings, bureaux de luxe fabriqués à Agadir.',
+        content: 'Cuisines, dressings, bureaux de luxe fabriqués à {Lacation}.',
       },
       {
         name: 'twitter:image',
@@ -64,16 +64,13 @@
     class="fixed flex flex-col gap-4 inset-0 z-[9999] bg-brand-black bg-primary-900 text-primary-200 items-center justify-center"
   >
     <NuxtImg
-      src="/images/logo-light.png"
+      src="/images/logo-light.webp"
       format="webp"
       width="80"
       height="80"
       alt=""
-      class="size-24 animate-pulse-logo"
+      class="size-24 reveal"
     />
-    <h2 class="text-center font-display text-3xl font-semibold reveal">
-      Elite MDF
-    </h2>
   </div>
   <NuxtLayout>
     <NuxtPage />
@@ -107,7 +104,7 @@
   }
 
   .reveal {
-    animation: reveal .6s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+    animation: reveal 0.6s cubic-bezier(0.4, 0, 0.6, 1) forwards;
   }
 
   .animate-pulse-logo {

@@ -22,7 +22,7 @@
           <p class="text-sm lg:text-xl mb-8 text-white">
             Découvrez des cuisines sur mesure, des salles de bain élégantes et
             des dressings personnalisés conçus pour sublimer votre intérieur.
-            Chez ELITEMDF, nous donnons vie à vos idées avec précision et
+            Chez ACMEMDF, nous donnons vie à vos idées avec précision et
             savoir-faire.
           </p>
         </motion.div>
@@ -57,6 +57,7 @@
   const scrollToSection = (section: string) => {
     const el = document.getElementById(section) ?? section;
     scrollTo(el, {
+      offset: 64,
       duration: 2,
       easing: (t: number) => t,
     });
